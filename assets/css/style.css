@@ -15,9 +15,15 @@ header a {
     text-decoration: none;
     color: #777777;
     transition: 0.1s;
+    background-color: white;
+    border: 1px #777777 solid;
+    border-radius: 5px;
+    padding: 3px 5px;
+    cursor: pointer;
 }
 header a:hover {
-    color: #444444;
+    background-color: #777777;
+    color: white;
 }
 @media only screen and (max-width: 600px) {
     header h1 { 
@@ -67,6 +73,7 @@ header a:hover {
     border: #777777 2px solid;
     z-index: 2;
     border-radius: 30px;
+    font-family: 'Source Code Pro', monospace;
   }
   @media only screen and (max-width: 600px) {
     #overlay {
@@ -117,6 +124,7 @@ header a:hover {
     box-sizing: border-box;
     border: 2px solid #444444;
     border-radius: 10px;
+    font-family: 'Source Code Pro', monospace;
 
   }
 
@@ -128,6 +136,8 @@ header a:hover {
     border: 2px solid #444444;
     border-radius:  10px;
     height: 200%;
+    font-family: 'Source Code Pro', monospace;
+    resize: none;
   }
 
   
@@ -140,6 +150,14 @@ header a:hover {
     border: 2px solid #444444;
     border-radius: 10px;
     bottom: 0;
+    color: #777777;
+    font-family: 'Source Code Pro', monospace;
+    transition: 0.1s;
+    cursor: pointer;
+  }
+  input[type=submit]:hover {
+    background-color: #444444;
+    color: white;
   }
   footer {
       margin-top: 50%;

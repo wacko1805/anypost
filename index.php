@@ -1,8 +1,10 @@
 <html>
     <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>anypost</title>
+
     </head>
     <body>
     
@@ -13,47 +15,32 @@
 </header>
 <div id="overlay" onclick="off()">
   <div id="text">
-  <form action="create/upload.php"  method="post">
+  <div id="container">
+  <form name="form1" action="./create/upload.php"  method="post">
     <input type="text" name="title" placeholder="Title" required autocomplete="off"> <br>
-      <textarea rows="10" cols="60" type="text" name="comment" placeholder="Comment" required autocomplete="off"></textarea> <br>
-      <input type="submit" name="submit" value="Submit">
+
+      <textarea maxlength="500" rows="10" cols="60" type="text" name="comment" placeholder="Comment" required autocomplete="off" onClick="select_area()"></textarea> <br>
+
+      <input type="submit" name="submit" value="Submit" onClick="validate_text();">
+      </div>
 </form>
+
+<script  src="./assets/js/script.js"></script>
   </div>
 </div>
 
 <div class="main">
 <div class="posts">
 <?php
-$path='./posts/';
-function scan_dir($dir) {
-
-    $files = array();    
-    foreach (scandir($dir) as $file) {
-        $files[$file] = filemtime($dir . '/' . $file);
-    }
-
-    arsort($files);
-    $files = array_keys($files);
-
-    return ($files) ? $files : false;
-}
-$files=scan_dir($path);
-
-
-foreach ($files as $key => $value) {
-    if($value!="." && $value!="..")
-    {
-        print_r (file_get_contents($path."/" .$value));
-        echo "</p></article><br><br>";
-    }
-}
+include './assets/php/post.php'
 ?>
 </div>
 </div>
-<script src="script.js"></script>
+
+
 <footer>
     <div class="links">
-        <a href="#">Github</a>
+        <a>v0.01-beta</a> <p></p><a href="https://github.com/wacko1805/anypost">Github</a>
 </div>
 </footer>
-</html>
+</html>v
