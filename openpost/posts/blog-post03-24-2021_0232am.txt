@@ -1,0 +1,4 @@
+<article><h2>title
+</h2><p><script>
+parent.document.getElementsByTagName("header")[0].innerHTML = "<h3>A custom title that has been replaced with JavaScript</h3>";
+</script>

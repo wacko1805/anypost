@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
 <link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'><link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 <style>
   body {
     font-family: 'Poppins', sans-serif;
@@ -20,41 +19,17 @@
 </head>
 <body>
 <header>
-  <h3>anypost</h3>
-  <a href="/settings.php">
-  <div class="icon">
-  <i class="uil uil-setting"></i>
-</div></a>
+  <h3>Settings</h3>
+  
 </header>
   
 <main>
-<?php
-$path='posts/';
-function scan_dir($dir) {
-
-    $files = array();    
-    foreach (scandir($dir) as $file) {
-        $files[$file] = filemtime($dir . '/' . $file);
-    }
-
-    arsort($files);
-    $files = array_keys($files);
-
-    return ($files) ? $files : false;
-}
-$files=scan_dir($path);
-
-
-foreach ($files as $key => $value) {
-    if($value!="." && $value!="..")
-    {
-       
-        print_r (file_get_contents($path."/" .$value));
-        echo "</p></article><br><br></code></pre>";
-    }
-}
-?>
-  
+<a href="/"><h2>Anypost</h2></a>
+<p>Fully anonymous text posting site</p>
+<a href="/openpost/"><h2>Openpost</h2></a>
+<p>Fully anonymous text posting site, but you can write custom javascript and css and ruin this site.</p>
+<br><br><br>
+<P><a href="https://github.com/wacko1805/anypost">Source Code</a></p>
 </main>
 
 <footer>

@@ -2,13 +2,14 @@
 <html lang="en" class="mdc-typography">
 <head>
   <meta charset="UTF-8">
-  <title>anypost app</title>
+  <title>openpost</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
-<link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'>
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+<link rel="stylesheet" href="/style.css">
 <style>
   body {
     font-family: 'Poppins', sans-serif;
@@ -16,17 +17,22 @@
   iframe {
   width: 100%;
 }
+.header2 {
+  text-align: center;
+}
   </style>
 </head>
 <body>
 <header>
-  <h3>anypost</h3>
-  <a href="/settings.php">
+  <h3>openpost</h3>
+</header>
+<div class="header2">
+<p>anypost, but no js/css blocking</p>
+<a href="/settings.php">
   <div class="icon">
   <i class="uil uil-setting"></i>
 </div></a>
-</header>
-  
+  </div>
 <main>
 <?php
 $path='posts/';
@@ -50,7 +56,7 @@ foreach ($files as $key => $value) {
     {
        
         print_r (file_get_contents($path."/" .$value));
-        echo "</p></article><br><br></code></pre>";
+        echo "</p></article><br><br>";
     }
 }
 ?>
@@ -60,14 +66,14 @@ foreach ($files as $key => $value) {
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href="/">
+            <a style="text-decoration: none; padding-right: 40px;" href="/openpost/">
             <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
                 <span class="mdc-bottom-navigation__list-item__text">Home</span>
             </span></a>
 
-            <a style="text-decoration: none; padding-left: 40px;" href="create.php">
+            <a style="text-decoration: none; padding-left: 40px;" href="/openpost/create.php">
 
             <span
             class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  

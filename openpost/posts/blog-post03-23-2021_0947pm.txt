@@ -1,0 +1,2 @@
+<article><h2>Italic
+</h2><p><i>in theory, this should be italic</i>

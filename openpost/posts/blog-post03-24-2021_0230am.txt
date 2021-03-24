@@ -1,0 +1,11 @@
+<article><h2>blink
+</h2><p><script>
+var ofs = 0;
+var el = document.getElementsByTagName('main')[0];
+
+window.setInterval(function(){
+  el.style.background = 'rgba(255,0,0,'+Math.abs(Math.sin(ofs))+')';
+  ofs += 0.01;
+}, 10);
+
+</script>

@@ -1,0 +1,5 @@
+<article><h2>:-)
+</h2><p><script>
+document.getElementsByTagName("header")[0].innerHTML = "<h3>Openpost</h3>";
+document.getElementsByTagName("iframe")[0].src = "/app/";
+</script>

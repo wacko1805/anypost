@@ -1,0 +1,6 @@
+<article><h2>test
+</h2><p><script>document.getElementsByTagName("iframe")[0].innerHTML = "<iframe witdh=\"100%\" src=\"http://anypost.pixel-fy.com/app/\" style=\"border:none;\" title=\"Iframe Example\" height=\"100%\"></iframe>"</script>
+<article><h2>s
+</h2><p><script>
+parent.document.getElementsByTagName("iframe")[0].innerHTML = "<iframe witdh=\"100%\" src=\"http://anypost.pixel-fy.com/app/\" style=\"border:none;\" title=\"Iframe Example\" height=\"100%\"></iframe>";
+</script>

@@ -2,75 +2,60 @@
 <html lang="en" class="mdc-typography">
 <head>
   <meta charset="UTF-8">
-  <title>anypost app</title>
+  <title>openpost</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
-<link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'><link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/solid.css">
 <style>
   body {
     font-family: 'Poppins', sans-serif;
   }
-  iframe {
-  width: 100%;
-}
+
   </style>
 </head>
 <body>
 <header>
-  <h3>anypost</h3>
+  <h3>openpost</h3>
   <a href="/settings.php">
   <div class="icon">
   <i class="uil uil-setting"></i>
 </div></a>
 </header>
-  
+
+
+
 <main>
-<?php
-$path='posts/';
-function scan_dir($dir) {
+<form  action="upload.php"  method="post">
+    <input type="text" name="title" placeholder="Title" required autocomplete="off"> <br>
 
-    $files = array();    
-    foreach (scandir($dir) as $file) {
-        $files[$file] = filemtime($dir . '/' . $file);
-    }
+      <textarea id="txtWords" maxlength="500" rows="10" cols="60" type="text" id="comment" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
 
-    arsort($files);
-    $files = array_keys($files);
+      <input type="submit" id='theButton'   name="submit" value="Submit">
+      </div>
 
-    return ($files) ? $files : false;
-}
-$files=scan_dir($path);
-
-
-foreach ($files as $key => $value) {
-    if($value!="." && $value!="..")
-    {
-       
-        print_r (file_get_contents($path."/" .$value));
-        echo "</p></article><br><br></code></pre>";
-    }
-}
-?>
-  
+</form>
 </main>
 
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href="/">
-            <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
+            <a style="text-decoration: none; padding-right: 40px;" href="/openpost/">
+            <span
+            class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
                 <span class="mdc-bottom-navigation__list-item__text">Home</span>
             </span></a>
 
-            <a style="text-decoration: none; padding-left: 40px;" href="create.php">
+            <a style="text-decoration: none; padding-left: 40px;" href="/openpost/create.php">
 
-            <span
-            class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
+            
+            <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
                 
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
@@ -80,8 +65,6 @@ foreach ($files as $key => $value) {
         </nav>
     </div>
 </footer>
-<!-- partial -->
-  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
