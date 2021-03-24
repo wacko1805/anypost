@@ -1,4 +1,4 @@
 # anypost
 
-http://anypost.rf.gd/
+http://anypost.pixel-fy.com
  
