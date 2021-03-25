@@ -82,7 +82,15 @@ foreach ($files as $key => $value) {
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
                 <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
             </span>
+            <a style="text-decoration: none; padding-left: 40px;" href="/chats.php">
 
+            
+<span class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
+    data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
+    
+    <span class="material-icons mdc-bottom-navigation__list-item__icon">chat</span>
+    <span class="mdc-bottom-navigation__list-item__text">Chats</span></a>
+    </span>
         </nav>
     </div>
 </footer>

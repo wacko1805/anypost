@@ -1,2 +1,0 @@
-<article><h2>Wait, do I need to make this an anchor? Does this accept html?
-</h2><p><a href="https://dresscode.danhakimi.com/fun-poses/">Fun Poses in Menswear</a>

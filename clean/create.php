@@ -21,10 +21,8 @@
 <body>
 <header>
   <h3>openpost</h3>
-  <a href="/settings.php">
-  <div class="icon">
-  <i class="uil uil-setting"></i>
-</div></a>
+  <div class="icon"><i class="uil uil-settings"></i></div></a>
+
 </header>
 
 
@@ -44,7 +42,7 @@
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href="/openpost/">
+            <a style="text-decoration: none; padding-right: 40px;" href="/clean/">
             <span
             class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
@@ -52,7 +50,7 @@
                 <span class="mdc-bottom-navigation__list-item__text">Home</span>
             </span></a>
 
-            <a style="text-decoration: none; padding-left: 40px;" href="/openpost/create.php">
+            <a style="text-decoration: none; padding-left: 40px;" href="/clean/create.php">
 
             
             <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
@@ -61,6 +59,7 @@
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
                 <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
             </span>
+
             <a style="text-decoration: none; padding-left: 40px;" href="/chats.php">
 
             
@@ -70,6 +69,7 @@
     <span class="material-icons mdc-bottom-navigation__list-item__icon">chat</span>
     <span class="mdc-bottom-navigation__list-item__text">Chats</span></a>
     </span>
+
         </nav>
     </div>
 </footer>

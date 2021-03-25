@@ -19,24 +19,55 @@
 <body>
 <header>
   <h3>anypost</h3>
-  <a href="/settings.php">
-  <div class="icon">
-  <i class="uil uil-setting"></i>
-</div></a>
+  <div class="icon"><i class="uil uil-settings"></i></div></a>
+
 </header>
 
 
 
 <main>
-<form  action="upload.php"  method="post">
-    <input type="text" name="title" placeholder="Title" required autocomplete="off"> <br>
+<form onsubmit="return validate()"  action="upload.php"  method="post">
+    <input type="text" name="title" id="title" placeholder="Title" required autocomplete="off"> <br>
 
-      <textarea id="txtWords" maxlength="500" rows="10" cols="60" type="text" id="comment" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
+      <textarea  maxlength="500" rows="10" cols="60" type="text" id="comment" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
 
       <input type="submit" id='theButton'   name="submit" value="Submit">
       </div>
 
 </form>
+<script>
+    function validate() {
+        if(document.getElementById("comment").value.includes('style.transform  = "rotate')) {
+            alert('No rotate or you');
+            return false;
+        }
+    }
+</script>
+<script>
+    function validate() {
+        if(document.getElementById("title").value.includes('style.transform  = "rotate')) {
+            alert('No rotate or you');
+            return false;
+        }
+    }
+</script>
+
+<script>
+    function validate() {
+        if(document.getElementById("comment").value.includes('<style')) {
+            alert('Your comment contains CSS, please remove and try again');
+            return false;
+        }
+    }
+</script>
+<script>
+    function validate() {
+        if(document.getElementById("title").value.includes('<style')) {
+            alert('Your comment contains CSS, please remove and try again');
+            return false;
+        }
+    }
+</script>
 </main>
 
 <footer>
@@ -59,7 +90,15 @@
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
                 <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
             </span>
+            <a style="text-decoration: none; padding-left: 40px;" href="/chats.php">
 
+            
+<span class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
+    data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
+    
+    <span class="material-icons mdc-bottom-navigation__list-item__icon">chat</span>
+    <span class="mdc-bottom-navigation__list-item__text">Chats</span></a>
+    </span>
         </nav>
     </div>
 </footer>

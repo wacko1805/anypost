@@ -1,3 +1,0 @@
-<article><h2>create here
-</h2><p>
-<iframe witdh="100%" src="http://anypost.pixel-fy.com/app/create.php" style="border:none;" title="Iframe Example" height="100%"></iframe>
