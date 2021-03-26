@@ -1,5 +1,5 @@
 <?php
-header('Location: /openpost/');
+header('Location: /clean/');
 
 if(isset($_POST['submit'])){
 $Name = "<article><h2>".$_POST['title']."

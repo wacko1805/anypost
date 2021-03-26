@@ -10,11 +10,23 @@
 <link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'><link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/solid.css">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+	<script src="jquery.charReplacer.js"></script>
 <style>
   body {
     font-family: 'Poppins', sans-serif;
   }
   </style>
+      <script src="../jquery-1.9.1.js"></script>
+    <script src="../jquery.charReplacer.js"></script>
+    <script>
+        $(function () {
+            $("#replace").charReplacer({ replaceChar: ["<", ">", '\n'], replaceWith: ["&lt;", "&gt;", " &lt;br&gt; "] });   //  replaces array with array   
+            $("#replace2").charReplacer({ replaceChar: ["<", ">", '\n'], replaceWith: ["&lt;", "&gt;", " &lt;br&gt; "] });   //  replaces array with array   
+            $("input[char-replace='true']").charReplacer();
+        });
+    </script>
 </head>
 <body>
 <header>
@@ -27,47 +39,16 @@
 
 <main>
 <form onsubmit="return validate()"  action="upload.php"  method="post">
-    <input type="text" name="title" id="title" placeholder="Title" required autocomplete="off"> <br>
+    <input type="text" name="title" id="replace" placeholder="Title" required autocomplete="off"> <br>
 
-      <textarea  maxlength="500" rows="10" cols="60" type="text" id="comment" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
+      <textarea  maxlength="500" rows="10" cols="60" type="text" id="replace2" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
 
       <input type="submit" id='theButton'   name="submit" value="Submit">
       </div>
 
 </form>
-<script>
-    function validate() {
-        if(document.getElementById("comment").value.includes('style.transform  = "rotate')) {
-            alert('No rotate or you');
-            return false;
-        }
-    }
-</script>
-<script>
-    function validate() {
-        if(document.getElementById("title").value.includes('style.transform  = "rotate')) {
-            alert('No rotate or you');
-            return false;
-        }
-    }
-</script>
 
-<script>
-    function validate() {
-        if(document.getElementById("comment").value.includes('<style')) {
-            alert('Your comment contains CSS, please remove and try again');
-            return false;
-        }
-    }
-</script>
-<script>
-    function validate() {
-        if(document.getElementById("title").value.includes('<style')) {
-            alert('Your comment contains CSS, please remove and try again');
-            return false;
-        }
-    }
-</script>
+
 </main>
 
 <footer>

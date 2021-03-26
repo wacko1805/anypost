@@ -10,6 +10,9 @@
 <link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'>
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 <link rel="stylesheet" href="/style.css">
+<script>
+echo htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+</script>
 <style>
   body {
     font-family: 'Poppins', sans-serif;

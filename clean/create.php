@@ -17,6 +17,15 @@
   }
 
   </style>
+        <script src="../jquery-1.9.1.js"></script>
+    <script src="../jquery.charReplacer.js"></script>
+    <script>
+        $(function () {
+            $("#replace").charReplacer({ replaceChar: ["<", ">", '\n'], replaceWith: ["&lt;", "&gt;", " &lt;br&gt; "] });   //  replaces array with array   
+            $("#replace2").charReplacer({ replaceChar: ["<", ">", '\n'], replaceWith: ["&lt;", "&gt;", " &lt;br&gt; "] });   //  replaces array with array   
+            $("input[char-replace='true']").charReplacer();
+        });
+    </script>
 </head>
 <body>
 <header>
@@ -28,13 +37,16 @@
 
 
 <main>
-<form  action="upload.php"  method="post">
-    <input type="text" name="title" placeholder="Title" required autocomplete="off"> <br>
+<form onsubmit="return validate()"  action="upload.php"  method="post">
+    <input type="text" name="title" id="replace" placeholder="Title" required autocomplete="off"> <br>
 
-      <textarea id="txtWords" maxlength="500" rows="10" cols="60" type="text" id="comment" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
+      <textarea  maxlength="500" rows="10" cols="60" type="text" id="replace2" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
 
       <input type="submit" id='theButton'   name="submit" value="Submit">
       </div>
+
+</form>
+
 
 </form>
 </main>
