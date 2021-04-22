@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 html, body {
   height:100%;
+  font-family: 'Poppins', sans-serif;
 }
 body {
   display:flex;
@@ -22,13 +23,14 @@ main {
   padding:20px;
   margin-left: 35%;
   margin-right: 35%;
+  padding-bottom: 50px;
   word-wrap: normal;
   word-break: break-word;
 }
 @media only screen and (max-width: 600px) {
   main {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   
   }
 }

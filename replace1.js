@@ -1,4 +1,4 @@
-﻿/*
+/*
  *  Copyright 2013 Rameez Raja
  *  version 1.0 
 */

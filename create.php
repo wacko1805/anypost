@@ -1,90 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" class="mdc-typography">
 <head>
-  <meta charset="UTF-8">
-  <title>anypost app</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
-<link rel='stylesheet' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'><link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/solid.css">
-<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-
-	<script src="jquery.charReplacer.js"></script>
-<style>
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-  </style>
-      <script src="../jquery-1.9.1.js"></script>
-    <script src="../jquery.charReplacer.js"></script>
-    <script>
-        $(function () {
-            $("#replace").charReplacer({ replaceChar: ["<", ">", '\n'], replaceWith: ["&lt;", "&gt;", " &lt;br&gt; "] });   //  replaces array with array   
-            $("#replace2").charReplacer({ replaceChar: ["<", ">", '\n'], replaceWith: ["&lt;", "&gt;", " &lt;br&gt; "] });   //  replaces array with array   
-            $("input[char-replace='true']").charReplacer();
-        });
-    </script>
+<?php include("config.php"); ?>
+  <title><?php echo $maintitle ?></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel="stylesheet" href="style.css">
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://raw.githubusercontent.com/mrameezraja/char-replacer/master/jquery-1.9.1.js"></script>
+  <script src="replace1.js"></script>
+  <script> $(function () { $("#replace").charReplacer({ replaceChar: ["<", ">", "\n"], replaceWith: ["&lt;", "&gt;", " "] });}) </script>
+  <script> $(function () { $("#replace2").charReplacer({ replaceChar: ["<", ">", "\n"], replaceWith: ["&lt;", "&gt;", " "] });})</script>
 </head>
 <body>
 <header>
-  <h3>anypost</h3>
-  <div class="icon"><i class="uil uil-settings"></i></div></a>
-
+  <h3><?php echo $maintitle ?></h3>
 </header>
-
-
-
 <main>
-<form onsubmit="return validate()"  action="upload.php"  method="post">
-    <input type="text" name="title" id="replace" placeholder="Title" required autocomplete="off"> <br>
+<?php $date = date('Y-m-d\TH:i:s:a'); ?>
 
+<form onsubmit="return validate()"  action="connect.php"  method="post">
+    <input type="text" name="title" id="replace"  placeholder="Title" required autocomplete="off"> <br>
       <textarea  maxlength="500" rows="10" cols="60" type="text" id="replace2" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
-
+      <input style="display:none;" type="datetime-local" name="date" value="<?= $date ?>">
       <input type="submit" id='theButton'   name="submit" value="Submit">
       </div>
-
 </form>
-
-
 </main>
-
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href="/">
+            <a style="text-decoration: none; padding-right: 40px;" href=".">
             <span
             class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
                 <span class="mdc-bottom-navigation__list-item__text">Home</span>
             </span></a>
-
-            <a style="text-decoration: none; padding-left: 40px;" href="/create.php">
-
-            
+            <a style="text-decoration: none; padding-left: 40px;" href="create.php">
             <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                
+                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded> 
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
                 <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
             </span>
-            <a style="text-decoration: none; padding-left: 40px;" href="/chats.php">
-
-            
-<span class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
-    data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-    
-    <span class="material-icons mdc-bottom-navigation__list-item__icon">chat</span>
-    <span class="mdc-bottom-navigation__list-item__text">Chats</span></a>
-    </span>
         </nav>
     </div>
 </footer>
-
 </body>
 </html>
-
 </html>
