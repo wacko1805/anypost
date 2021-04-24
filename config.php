@@ -4,4 +4,5 @@ $dbusername = "root";
 $dbpassword = "";
 $dbname = "anypost";
 $maintitle = "anypost"
+
 ?>

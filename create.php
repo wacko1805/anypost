@@ -13,16 +13,17 @@
 </head>
 <body>
 <header>
-  <h3><?php echo $maintitle ?></h3>
+  <h3>anypost<span>.</span></h3>
 </header>
 <main>
 <?php $date = date('Y-m-d\TH:i:s:a'); ?>
 
 <form onsubmit="return validate()"  action="connect.php"  method="post">
     <input type="text" name="title" id="replace"  placeholder="Title" required autocomplete="off"> <br>
-      <textarea  maxlength="500" rows="10" cols="60" type="text" id="replace2" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
-      <input style="display:none;" type="datetime-local" name="date" value="<?= $date ?>">
-      <input type="submit" id='theButton'   name="submit" value="Submit">
+      <textarea  maxlength="500" rows="7"  type="text" id="replace2" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
+      <input style="display:none;" type="text" name="date" value="<?= $date ?>">
+      
+            <input type="submit" id='theButton'   name="submit" value="Submit">
       </div>
 </form>
 </main>

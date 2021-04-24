@@ -6,42 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
   <link rel="stylesheet" href="style.css">
+  <meta http-equiv="refresh" content="5">
 </head>
 <body>
+  <div id="top"></div>
 <header>
-<h3><?php echo $maintitle ?></h3>
+<h3>anypost<span>.</span></h3>
 </header>
-<main> <?php include("posts.php");?><br>
-<?php
-$path='posts/';
-function scan_dir($dir) {
-
-    $files = array();    
-    foreach (scandir($dir) as $file) {
-        $files[$file] = filemtime($dir . '/' . $file);
-    }
-
-    arsort($files);
-    $files = array_keys($files);
-
-    return ($files) ? $files : false;
-}
-$files=scan_dir($path);
-
-
-foreach ($files as $key => $value) {
-    if($value!="." && $value!="..")
-    {
-       
-        print_r (file_get_contents($path."/" .$value));
-        echo "</p></article></article><br><br>";
-    }
-}
-?></main>
+<main> <?php include("posts.php");?></main>
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href=".">
+            <a style="text-decoration: none; padding-right: 40px;" href="#top">
             <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
