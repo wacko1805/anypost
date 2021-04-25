@@ -289,4 +289,35 @@ article {
   border: 5px solid var(--colour4);
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
 }
+article span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 14px;
+  color: var(--colour3);
+}
+
+.loader {
+  border: 10px solid var(--colour4);
+  border-radius: 50%;
+  border-top: 10px solid var(--main);
+  width: 120px;
+  height: 120px;
+  margin-left: 37%;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

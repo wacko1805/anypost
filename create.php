@@ -16,12 +16,20 @@
   <h3>anypost<span>.</span></h3>
 </header>
 <main>
-<?php $date = date('Y-m-d\TH:i:s:a'); ?>
+<?php $date = date('Y-m-d\TH:i:s:a');?>
+
+<?php  date_default_timezone_set('Etc/GMT+0');
+
+$displaydate = date('H:i A, M d ') ;
+$timezone = "GMT+";
+?>
+
 
 <form onsubmit="return validate()"  action="connect.php"  method="post">
     <input type="text" name="title" id="replace"  placeholder="Title" required autocomplete="off"> <br>
       <textarea  maxlength="500" rows="7"  type="text" id="replace2" name="comment" placeholder="Comment" required autocomplete="off" ></textarea> <br>
       <input style="display:none;" type="text" name="date" value="<?= $date ?>">
+      <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
       
             <input type="submit" id='theButton'   name="submit" value="Submit">
       </div>
