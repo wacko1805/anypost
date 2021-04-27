@@ -8,19 +8,7 @@
 </head>
 <body>
    
-    <div class="topnav" id="myTopnav">
-        <a class="active top" href=".">home</a>
-        <a  href="app">app</a>
-        <a href="download.html">download</a>
-        <a href="report.html">report a comment</a>
-        <a class="github" href="https://github.com/wacko1805/anypost">github</a>
-        <div class="topnav-right">
-          <a class="github2" href="https://github.com/wacko1805/anypost">github</a>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
+    
         <header>
             <h3>anypost dev</h3>
 </header>
