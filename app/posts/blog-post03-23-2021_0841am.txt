@@ -1,0 +1,3 @@
+<article><h2>Intoducing the anypost app! (Android Only)
+</h2><p><a href="https://github.com/wacko1805/anypost_app/releases/download/V1.0/Anypost-v1.0.apk">Download here!</a>
+This app is a web app and only 3 megabytes small. It is also open source. <a href="https://github.com/wacko1805/anypost_app">View the source code here!</a></article>

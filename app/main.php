@@ -2,42 +2,34 @@
 <html>
 <head>
   <?php include("config.php"); 
-    
   ?>
   <title><?php echo $maintitle ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta http-equiv="refresh" content="5">
 </head>
 <body>
-<div id="top"></div>
-<div id="header"><?php echo $maintitle ?></div>
-<div class="Topnav"  id="myTopnav">
-        <a class="top" >anypost</a>
-
-
-        <a href="javascript:void(0);" class="icon" onclick="fullnav()">
+<div class="topnav" id="myTopnav">
+        <a class="top" href=".">anypost</a>
+        <a  href="/">home</a>
+        <a href="/download.html">download</a>
+        <a href="/report.html">report a comment</a>
+        <a class="github" href="https://github.com/wacko1805/anypost">github</a>
+        <div class="topnav-right">
+          <a class="github2" href="https://github.com/wacko1805/anypost">github</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
       </div>
-
-
-      <div id="fullnav">
-      <p>anypost</a>
-          <div class="exit-icon">
-      <a href="javascript:void(0);"  onclick="fullnav()">
-      <i class="fa fa-times"></i></div>
-</a>
-<div class="main">
-<a href="/download.php">download apk</a><br>
-        <a href="/report.php">report a comment</a><br>
-        <a href="https://github.com/wacko1805/anypost">source code</a>
-</div>
-</div>
-
-<main>
-     <?php include("posts.php");?>
+      
+  <div id="top"></div>
+<header>
+<h3>anypost<span>.</span></h3>
+</header>
+<main> <?php include("posts.php");?>
 <?php
 $path='posts/';
 function scan_dir($dir) {
@@ -86,29 +78,15 @@ foreach ($files as $key => $value) {
 </footer>
   <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script><script  src="./script.js"></script>
   <script>
-function fullnav() {
-  var x = document.getElementById("fullnav");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-<script >
-    window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("myTopnav").style.opacity = "1";
-
-  } else {
-    document.getElementById("myTopnav").style.opacity = "0";
-
-  }
-}
-
-</script>
+          function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topnav";
+            }
+          }
+          </script>
 </body>
 </html>
 </html>

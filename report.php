@@ -9,13 +9,23 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  #myTopnav{
+    opacity: 1;
+    position: absolute;
+  }
+  #header {
+  padding-top: 160px;
+  padding-bottom: 60px;
+
+}
+  </style>
 </head>
 <body>
 <div id="top"></div>
-<div id="header"><?php echo $maintitle ?></div>
+<div id="header">report</div>
 <div class="Topnav"  id="myTopnav">
         <a class="top" >anypost</a>
-
 
         <a href="javascript:void(0);" class="icon" onclick="fullnav()">
           <i class="fa fa-bars"></i>
@@ -37,38 +47,19 @@
 </div>
 
 <main>
-     <?php include("posts.php");?>
-<?php
-$path='posts/';
-function scan_dir($dir) {
+<form action="report-upload.php" method="post" enctype="multipart/form-data">
+<h3>Select post</h3>
+<select name="report" id="report" placeholder="Select post">
+<option selected disabled>Choose one</option><?php include("select-posts.php");?></select>
+<input type="submit" id='submit'   name="submit" value="Submit">
+                  </form>
 
-    $files = array();    
-    foreach (scandir($dir) as $file) {
-        $files[$file] = filemtime($dir . '/' . $file);
-    }
-
-    arsort($files);
-    $files = array_keys($files);
-
-    return ($files) ? $files : false;
-}
-$files=scan_dir($path);
-
-
-foreach ($files as $key => $value) {
-    if($value!="." && $value!="..")
-    {
-       
-        print_r (file_get_contents($path."/" .$value));
-        echo "</p></article></article><br><br>";
-    }
-}
-?></main>
+</main>
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href="#top">
-            <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
+            <a style="text-decoration: none; padding-right: 40px;" href=".">
+            <span class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
                 <span class="mdc-bottom-navigation__list-item__text">Home</span>
@@ -77,7 +68,6 @@ foreach ($files as $key => $value) {
             <span
             class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
                 <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
             </span>
@@ -96,18 +86,7 @@ function fullnav() {
 }
 </script>
 <script >
-    window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("myTopnav").style.opacity = "1";
-
-  } else {
-    document.getElementById("myTopnav").style.opacity = "0";
-
-  }
-}
-
+ document.getElementById("myTopNav").style.opacity = "1";
 </script>
 </body>
 </html>

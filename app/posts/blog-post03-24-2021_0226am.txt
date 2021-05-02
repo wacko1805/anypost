@@ -1,0 +1,2 @@
+<article><h2>frame
+</h2><p><iframe witdh="100%" src="postsonly.php" style="border:none;" title="Iframe Example" height="100%"></iframe>

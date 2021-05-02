@@ -24,11 +24,10 @@ body {
 }
 
 
-#header {
-  opacity: 1;
+header {
   background-color: var(--bg);
   padding-top: 120px;
-  padding-bottom: 100px;
+  padding-bottom: 120px;
   color: var(--colour2);
   text-align: center;
   font-size: 60px; 
@@ -137,23 +136,7 @@ input[type=text] {
   transition: 0.2s;
   outline: none;
 }
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin-bottom: 8px;
-  box-sizing: border-box;
-  border: 5px solid var(--colour4);
-  background-color: var(--bg);;
-  border-radius: 5px;
-  font-family: var(--font);
-  transition: 0.2s;
-  outline: none;
-}
 
-h3 {
-  color: var(--colour3);
-  font-size: 30px;
-}
 a h2 {
   color: var(--main);
   text-decoration: none;
@@ -184,22 +167,6 @@ textarea {
 }
 
 input[type=submit] {
-  width: 40%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 5px solid var(--colour4);
-  background-color: var(--bg);;
-  color: var(--colour5);
-  border-radius: 5px;
-  bottom: 0;
-  transition: 0.1s;
-  cursor: pointer;
-  font-family: var(--font);
-  margin-bottom: 30px;
-  outline: none;
-}
-button {
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -404,12 +371,9 @@ article span {
   background-color: var(--bg);
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
-#mytopnav .always {
-  opacity: 1;
-}
+
 #myTopnav a {
   float: left;
-
   color: var(--colour3);
   text-align: center;
   padding: 8px 16px;
@@ -420,43 +384,6 @@ article span {
   transition: 0.1s;
 }
 
-@media only screen and (max-height: 500px) {
-  main {
-    margin-top: 60px;
-    padding-bottom: 5px;
-  }
-  }
-  @media only screen and (max-width: 1200px) {
-    main {
-    margin-left: 20%;
-    margin-right:20%;
-    
-    }
-  }
-  @media only screen and (max-width: 900px) {
-    main {
-    margin-left: 15%;
-    margin-right:15%;
-    
-    }
-  }
-  @media only screen and (max-width: 800px) {
-    main {
-    margin-left: 10%;
-    margin-right:10%;
-    
-    }
-  }
-  @media only screen and (max-width: 600px) {
-    main {
-    margin-left: 0;
-    margin-right: 0;
-    
-    }
-  }
-#myTopnav {
-
-}
 #myTopnav a:hover {
   background-color: var(--colour4);
   color: var(--colour2);
@@ -474,10 +401,8 @@ article span {
 
 
 #myTopnav .icon {
+  display: none;
   transition: 0.2s;
-  float: right;
-  margin-right: 15px;
-  display: inline;
   
 }
 #myTopnav .github {
@@ -551,7 +476,6 @@ article span {
   left: 0;
   right: 0;
   bottom: 0;
-  
   text-align: right;
   background-color: var(--bg); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
@@ -560,36 +484,6 @@ article span {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    padding-left: 35%;
-    padding-right: 35%;
-}
-@media only screen and (max-width: 1200px) {
-  #fullnav .main {
-  padding-left: 20%;
-  padding-right:20%;
-  
-  }
-}
-@media only screen and (max-width: 900px) {
-  #fullnav .main {
-    padding-left: 15%;
-    padding-right:15%;
-  
-  }
-}
-@media only screen and (max-width: 800px) {
-  #fullnav .main {
-    padding-left: 10%;
-    padding-right:10%;
-  
-  }
-}
-@media only screen and (max-width: 600px) {
-  #fullnav .main {
-    padding-left: 0;
-    padding-right: 0;
-  
-  }
 }
 #fullnav a {
   float: left;
@@ -602,7 +496,6 @@ article span {
   margin-right: 5px;
   transition: 0.1s;
 }
-
 #fullnav p {
   position: fixed;
   top: -30px;

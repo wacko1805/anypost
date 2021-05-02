@@ -53,12 +53,11 @@
 </div>
 
 <main>
-<form   action="connect.php" accept-charset="utf-8"  method="post">
+<form   action="connect.php"  method="post">
     <input type="text" name="title" id="title"  placeholder="Title" onkeyup="return forceLower(this);" required autocomplete="off"> <br>
       <textarea  maxlength="500" rows="7"  type="text" id="comment" name="comment" onkeyup="return forceLower(this);" placeholder="Comment" required autocomplete="off" ></textarea> <br>
       <input style="display:none;" type="text" name="date" value="<?= $date ?>">
       <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
-      
       
             <input type="submit" id='submit'   name="submit" value="Submit">
       </div>

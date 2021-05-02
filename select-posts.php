@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 
 while($row = $result->fetch_assoc()) {
 
-echo " " . "<article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><span>" . $row["display_time"]. " </span></artilce></article><br>";
+echo "<option value='" . $row["title"]. "'> " . $row["title"]. "</option> ";
 
 }
 
@@ -37,4 +37,3 @@ echo "<article><h2>Theres no posts!</h2></article>";
 $conn->close();
 
 ?>
-<?

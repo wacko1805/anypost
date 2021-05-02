@@ -1,0 +1,18 @@
+<article><h2><h1>HI MOM</h1>
+</h2><p><----style>
+h3 {
+  color: red;
+  animation: blink-animation 0.25s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+</style>
