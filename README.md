@@ -9,7 +9,7 @@
 1. install xammp, wamp, lamp or what ever mysql php server you use
 
 2. start the mysql server and head to http://localhost/phpmyadmin. Create a new database called "anypost" In that create a table called "posts".
-3. Create 4 columns named title, comment, upload_date and display_date. Set all of these to VARCHAR and change the limit to something like 200. 
+3. Create 4 columns named title, comment, upload_time and display_time. Set all of these to VARCHAR and change the limit to something like 200. 
 4. Download the source code to anypost and place it in the root location of the web server, (ex C:/xammp/htdocs).
 5. head to http://localhost and hopefully your very own Anypost is running!
 
