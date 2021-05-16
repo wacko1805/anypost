@@ -1,4 +1,0 @@
-<article><h2>Missing source code
-</h2><p>The source code of the version is missing on GitHub</article>
-<article><h2>*
-</h2><p>Of the new version of this app</article>

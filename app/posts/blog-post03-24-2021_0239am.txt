@@ -1,7 +1,0 @@
-<article><h2>v
-</h2><p><---script>
-parent.document.getElementsByClassName("mdc-bottom-navigation__list-item__text")[0].innerHTML = "Run to your mommy";
-parent.document.getElementsByClassName("material-icons mdc-bottom-navigation__list-item__icon")[0].innerHTML = "directions_run";
-parent.document.getElementsByClassName("mdc-bottom-navigation__list-item__text")[1].innerHTML = "You shall not create";
-parent.document.getElementsByClassName("material-icons mdc-bottom-navigation__list-item__icon")[1].innerHTML = "cancel";
-</script>

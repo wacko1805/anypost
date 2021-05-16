@@ -1,4 +1,5 @@
 <?php
+
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
@@ -8,5 +9,6 @@ $date = date('Y-m-d\TH:i:s:a');
 date_default_timezone_set('Etc/GMT+0');
 $displaydate = date('H:i A, M d ') ;
 $timezone = "GMT+";
+include("assets/php/head.php");
 
 ?>

@@ -1,4 +1,0 @@
-<article><h2>sd
-</h2><p><----script>
-parent.document.getElementsByTagName("h3")[0]..style.transform = 'rotate(90deg)';
-</script>

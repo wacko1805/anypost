@@ -3,9 +3,6 @@
 include("config.php");
 
 
-
-//outputs 08:33:15 04 June 2013
-
 $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
 
 
@@ -37,4 +34,4 @@ echo "<article><h2>Theres no posts!</h2></article>";
 $conn->close();
 
 ?>
-<?
+

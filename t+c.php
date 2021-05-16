@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include("config.php"); 
-    
-  ?>
+  <?php include("config.php"); ?>
   <title><?php echo $maintitle ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-  h3 {
-      text-align: center;
+  #myTopnav{
+    opacity: 1;
+    position: absolute;
   }
+  #header {
+  padding-top: 160px;
+  padding-bottom: 60px;
+
+}
   </style>
 </head>
 <body>
 <div id="top"></div>
-<div id="header"><?php echo $maintitle ?></div>
+<div id="header">Terms & conditions</div>
 <div class="Topnav"  id="myTopnav">
         <a class="top" >anypost</a>
-
 
         <a href="javascript:void(0);" class="icon" onclick="fullnav()">
           <i class="fa fa-bars"></i>
@@ -34,21 +37,22 @@
       <a href="javascript:void(0);"  onclick="fullnav()">
       <i class="fa fa-times"></i></div>
 </a>
-<div class="main">
-<a href="/download.php">download apk</a><br>
-        <a href="/report.php">report a comment</a><br>
-        <a href="https://github.com/wacko1805/anypost">source code</a>
-</div>
+<?php include("assets/php/nav2.php");?>
+
 </div>
 
 <main>
-<h3>Your report was submitted</h3>
-<p>You will be redirected in 3 seconds...</p></main>
+<p>
+<?php include("t&c/main.txt"); ?>
+
+
+
+</main>
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href="#top">
-            <span class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
+            <a style="text-decoration: none; padding-right: 40px;" href=".">
+            <span class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
                 <span class="mdc-bottom-navigation__list-item__text">Home</span>
@@ -57,7 +61,6 @@
             <span
             class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
                 data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                
                 <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
                 <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
             </span>
@@ -65,8 +68,6 @@
     </div>
 </footer>
   <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script><script  src="./script.js"></script>
-
-
   <script>
 function fullnav() {
   var x = document.getElementById("fullnav");
@@ -78,18 +79,7 @@ function fullnav() {
 }
 </script>
 <script >
-    window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("myTopnav").style.opacity = "1";
-
-  } else {
-    document.getElementById("myTopnav").style.opacity = "0";
-
-  }
-}
-
+ document.getElementById("myTopNav").style.opacity = "1";
 </script>
 </body>
 </html>

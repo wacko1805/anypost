@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include("config.php"); ?>
-  <title><?php echo $maintitle ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-  <link rel="stylesheet" href="style.css">
+  <?php include("config.php");?>
   <style>
       article {
           text-align: center;
@@ -15,38 +11,12 @@
 
       }
       </style>
+
 </head>
 <body>
-<div id="top"></div>
-<header><?php echo $maintitle ?></header>
-<div class="Topnav"  id="myTopnav">
-        <a class="top" >anypost</a>
-        <div class="topnav-right">
-        <a class="github2" href="/download.html">download</a>
-        <a class="github2" href="/report.html">report a comment</a>
-          <a class="github2" href="https://github.com/wacko1805/anypost">github</a>
-        </div>
-
-
-        <a href="javascript:void(0);" class="icon" onclick="fullnav()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-
-
-      <div id="fullnav">
-      <p>anypost</a>
-          <div class="exit-icon">
-      <a href="javascript:void(0);"  onclick="fullnav()">
-      <i class="fa fa-times"></i></div>
-</a>
-<div class="main">
-<a href="/download.html">download apk</a><br>
-        <a href="/report.html">report a comment</a><br>
-        <a href="https://github.com/wacko1805/anypost">source code</a>
-</div>
-</div>
+<?php include("assets/php/nav.php");?>
 <main>
+
 <script language="JavaScript" type="text/javascript">
 setTimeout("location.href = 'index.php'",2000); // milliseconds, so 10 seconds = 10000ms
 </script>
@@ -119,7 +89,7 @@ die();
         </nav>
     </div>
 </footer>
-  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script><script  src="./script.js"></script>
+<?php include ("json.php"); ?>
 </body>
 </html>
 </html>
