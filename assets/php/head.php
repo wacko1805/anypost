@@ -9,8 +9,7 @@
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="https://raw.githubusercontent.com/mrameezraja/char-replacer/master/jquery-1.9.1.js"></script>
   <script src="assets/js/replace1.js"></script>
-  <script> $(function () { $("#title").charReplacer({ replaceChar: ["'", ">","<", "\n"], replaceWith: ["’", "&gt;", "&lt;", " "] });}) </script>
-  <script> $(function () { $("#comment").charReplacer({ replaceChar: ["'", ">","<", "\n"], replaceWith: ["’", "&gt;", "&lt;", " "] });})</script>
+
   <link rel="icon" type="image/png" href="../favicon.png"/>
   <meta name="description" content="Anypost. An open source, fully anonymous posting site!">
   <meta name="keywords" content="chat, chat app, anypost, php, css, chatting, posting, posting app, wacko1805">

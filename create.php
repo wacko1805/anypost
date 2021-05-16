@@ -25,21 +25,16 @@
 <main>
       
       
-
-<script type="text/javascript">
-    document.write("<form action=\"connect.php\" id=\"form\" accept-charset=\"utf-8\"  method=\"post\" />");
-    document.write("<input type=\"text\" name=\"title\" id=\"title\"  placeholder=\"Title\" onkeyup=\"return forceLower(this);\" required autocomplete=\"off\"> <br> ");
-    document.write("<textarea  maxlength=\"500\" rows=\"7\"  type=\"text\" id=\"comment\" name=\"comment\" onkeyup=\"return forceLower(this);\" placeholder=\"Comment\" required autocomplete=\"off\" /></textarea> <br>");
-    document.write("<input style=\"display:none;\" type=\"text\" name=\"date\" value=\"<?= $date ?>\">");
-    document.write("<input style=\"display:none;\" type=\"text\" name=\"displaydate\" value=\"<?= $displaydate ?> <?= $timezone ?>\">");
-    document.write("<input type=\"submit\" id=\'submit\' name=\"submit\" value=\"Submit\">");
-
-
-
-</script>
-<noscript>
-    <article><h2>Please enable JavaScript to continue</h2><p>Sorry if this causes any inconveniences.</p></article>
-</noscript>
+<form   action="connect.php" accept-charset="utf-8"  method="post">
+    <input type="text" name="title" id="title"  placeholder="Title" onkeyup="return forceLower(this);" required autocomplete="off"> <br>
+      <textarea  maxlength="500" rows="7"  type="text" id="comment" name="comment" onkeyup="return forceLower(this);" placeholder="Comment" required autocomplete="off" ></textarea> <br>
+      <input style="display:none;" type="text" name="date" value="<?= $date ?>">
+      <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
+      
+      
+            <input type="submit" id='submit'   name="submit" value="Submit">
+      </div>
+</form>
 </div>
 
 
