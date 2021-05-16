@@ -22,10 +22,10 @@ setTimeout("location.href = 'index.php'",2000); // milliseconds, so 10 seconds =
 </script>
 <?php
 
-$title = filter_input(INPUT_POST, 'title');
-$comment = filter_input(INPUT_POST, 'comment');
-$upload_time = filter_input(INPUT_POST, 'date');
-$display_time = filter_input(INPUT_POST, 'displaydate');
+$title = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'title')))));
+$comment = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'comment')));
+$upload_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'date')));
+$display_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'displaydate')));
 if (!empty($title)){
 if (!empty($comment)){
     if (!empty($upload_time)){
