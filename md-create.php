@@ -2,22 +2,11 @@
 <html>
 <head>
   <?php include("config.php");?>
-    <style>
-
-@media only screen and (max-height: 500px) {
-.mdc-bottom-navigation {
-  display: none;
-}
-}
-
-@media only screen and (max-height: 500px) {
-#header {
-  display: none;
-}
-}
-
-        </style>
-
+<style>
+  textarea {
+    height: 300px
+  }
+  </style>
         
 </head>
 <body>
@@ -25,17 +14,15 @@
 <div id="main">
 
 <main>
-      
-      
-<form   action="connect.php" accept-charset="utf-8"  method="post">
-    <input type="text" name="title" id="title"  placeholder="Title"  required autocomplete="off"> <br>
-      <textarea  maxlength="500" rows="7"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" ></textarea> <br>
+<form   action="md-connect.php" accept-charset="utf-8"  method="post">
+<input  style="display:none;" type="text" name="title" id="title"  placeholder="Title" value=" "  required autocomplete="off"> <br>
+    <textarea class="mdhtmlform-md">## add markdown to anypost!</textarea>
+      <textarea class="mdhtmlform-html"   maxlength="500" rows="16" cols="80"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" style="display: none;" ></textarea> <br>
       <input style="display:none;" type="text" name="date" value="<?= $date ?>">
       <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
-      
+      <div class="mdhtmlform-html"></div>
       <div  class="submitp"><p><input type="submit" id='submit'   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="t+c.php#main">Terms and conditions</a></i></p></div>
-      <a href="md-create.php"><p class="newbox">Try the new markdown editor! (beta)</p></a>
-    </div>
+      </div>
 </form>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -47,15 +34,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
 
-
-
-
-<script src="assets/js/block.js"></script>
-
-
-</main>
 <footer>
   <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
@@ -77,6 +56,23 @@
 </footer>
 <script src='assets/js/main.js'></script>
 
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-</body>
+
+        <!-- mdhtmlform Dependencies -->
+        <script src="https://www.justinmccandless.com/demos/markdown-html-form/examples/simple/js/vendor/showdown.js"></script> <!-- Include Showdown before mdhtmlform! -->
+        <script src="https://www.justinmccandless.com/demos/markdown-html-form/examples/simple/js/vendor/to-markdown.js"></script> <!-- Include to-markdown before mdhtmlform -->
+        <script src="https://www.justinmccandless.com/demos/markdown-html-form/examples/simple/js/mdhtmlform.js"></script> <!-- The main mdhtmlform file -->
+        <!-- end mdhtmlform Dependencies -->
+        
+        <script src="https://www.justinmccandless.com/demos/markdown-html-form/examples/simple/js/example.js"></script> <!-- The js for this example -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
 </html>

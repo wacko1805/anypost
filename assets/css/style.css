@@ -49,7 +49,6 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 html {
-scroll-behavior: smooth;
 }
 :root {
 --main: #9088d4;
@@ -79,7 +78,7 @@ background-color: var(--bg);
     padding-bottom: 100px;
     color: var(--colour2);
     text-align: center;
-    font-size: 60px; 
+    font-size: 70px; 
     font-weight: bold;
     width: 100%;
     transition: 0.1s;
@@ -129,7 +128,21 @@ main h2 {
   margin-bottom: 10px;
   color: var(--colour2);
   }
-
+  main h1 {
+    font-size:45px;
+    margin-bottom: 0;
+    color: var(--colour2);
+    }
+   main ol li {
+     color: var(--colour3);
+      padding: 5px;
+      margin-left: 35px;
+    }
+    
+  main  ul li {
+    color: var(--colour3);
+    margin: 5px;
+    }
   main a {
     color: var(--main);
     transition: 0.2s;
@@ -204,9 +217,10 @@ transition: 0.2s;
 outline: none;
 -webkit-appearance: none;
 -webkit-border-radius: 5px;
+font-size: 16px;
 }
 input[type=text]:focus {
-border: 5px solid var(--main);
+  border: 5px solid var(--colour5);
 }
 select {
 width: 100%;
@@ -223,7 +237,7 @@ outline: none;
 -webkit-border-radius: 5px;
 }
 select:focus {
-border: 5px solid var(--main);
+  border: 5px solid var(--colour5);
 
 }
 h3 {
@@ -244,7 +258,7 @@ text-decoration: none;
 textarea {
 width: 100%;
 padding: 12px 20px;
-margin: 8px 0;
+margin: 12px 0;
 box-sizing: border-box;
 border: 5px solid var(--colour4);
 background-color: var(--bg);
@@ -257,7 +271,7 @@ outline: none;
 -webkit-border-radius: 5px;
 }
 textarea:focus {
-border: 5px solid var(--main);
+  border: 5px solid var(--colour5);
 
 }
 @media only screen and (max-width: 600px) {
@@ -285,7 +299,8 @@ outline: none;
 -webkit-border-radius: 5px;
 }
 input[type=submit]:focus {
-border: 5px solid var(--main);
+border: 5px solid var(--colour5);
+background-color: var(--colour5);;
 
 }
 button {
@@ -618,13 +633,7 @@ border-radius: 10px;
 background: var(--colour2); 
 }
 
-#title {
-text-transform:lowercase;
-}
 
-#comment {
-text-transform:lowercase;
-}
 
 #fullnav {
 position: fixed; /* Sit on top of the page content */
@@ -826,4 +835,24 @@ background: var(--bg);
 
 .closebtn:hover {
   color: black;
+}
+.submitp {
+  position: relative;
+
+}
+.submitp i {
+  font-size: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  text-align: right;
+}
+
+.newbox {
+padding: 12px 20px;
+border: 5px solid var(--colour4);
+background-color: var(--bg);;
+color: var(--colour5);
+border-radius: 5px;
+
 }
