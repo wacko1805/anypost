@@ -10,7 +10,10 @@ if ($conn->connect_error) {
 
 die("Connection failed: " . $conn->connect_error);
 
+
 }
+
+
 
 $sql = "SELECT * FROM `posts` ORDER BY `posts`.`upload_time` DESC ";
 
@@ -21,7 +24,7 @@ if ($result->num_rows > 0) {
 
 while($row = $result->fetch_assoc()) {
 
-echo " " . "<article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><span>" . $row["display_time"]. " </span></artilce></article><br>";
+echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><a href='topics.php?id=" . $row["id"]. "'><span>" . $row["display_time"]. " </span></artilce></article></div><br>";
 
 }
 

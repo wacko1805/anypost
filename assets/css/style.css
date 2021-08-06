@@ -113,57 +113,78 @@ border-bottom: 0px solid white;
 
 main {
   
-flex-grow:1;
-padding:20px;
-margin-left: 35%;
-margin-right: 35%;
-padding-bottom: 50px;
-word-wrap: normal;
-word-break: break-word;
-transition: 0.2s;
-margin-top: 40px;
-}
-main h2 {
-  font-size:35px;
-  margin-bottom: 10px;
-  color: var(--colour2);
+  flex-grow:1;
+  padding:20px;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding-bottom: 50px;
+  word-wrap: normal;
+  word-break: break-word;
+  transition: 0.2s;
+  margin-top: 40px;
   }
-  main h1 {
-    font-size:45px;
-    margin-bottom: 0;
+  main a h2 {
+    font-size:35px;
+    margin-bottom: 10px;
     color: var(--colour2);
     }
-   main ol li {
-     color: var(--colour3);
-      padding: 5px;
-      margin-left: 35px;
-    }
-    
-  main  ul li {
-    color: var(--colour3);
-    margin: 5px;
-    }
-  main a {
-    color: var(--main);
-    transition: 0.2s;
-    text-decoration: none;
-    }
 
-    main a:hover {
+    main  h2 {
+      font-size:35px;
+      margin-bottom: 10px;
       color: var(--colour2);
       }
-
-      main p {
-        font-size: 25px;
-        color: var(--colour3);
-        margin-top: 0;
+    main h1 {
+      font-size:45px;
+      margin-bottom: 0;
+      color: var(--colour2);
+      }
+     main ol li {
+       color: var(--colour3);
+        padding: 5px;
+        margin-left: 35px;
+      }
+      
+    main  ul li {
+      color: var(--colour3);
+      margin: 5px;
+      }
+    main a a {
+      color: var(--main);
+      transition: 0.2s;
+      text-decoration: none;
+      }
+  
+      main a a:hover {
+        color: var(--colour2);
         }
 
-        main  ol li {
-          font-size: 20px;
+        main  a {
           color: var(--main);
-        }
-
+          transition: 0.2s;
+          text-decoration: none;
+          }
+      
+          main  a:hover {
+            color: var(--colour2);
+            }
+  
+        main a p {
+          font-size: 25px;
+          color: var(--colour3);
+          margin-top: 0;
+          }
+    
+          main  p {
+            font-size: 25px;
+            color: var(--colour3);
+            margin-top: 0;
+            }
+          main  ol li {
+            font-size: 20px;
+            color: var(--main);
+          }
+  
 
 
 
@@ -259,17 +280,23 @@ textarea {
 width: 100%;
 padding: 12px 20px;
 margin: 12px 0;
-box-sizing: border-box;
 border: 5px solid var(--colour4);
 background-color: var(--bg);
 border-radius: 5px;
 resize: none;
+height: 300px;
 transition: 0.2s;
 font-family: var(--font);
 outline: none;
 -webkit-appearance: none;
 -webkit-border-radius: 5px;
 }
+@media screen and (max-height: 500px) {
+  textarea {
+    height: 70px;
+  }
+  }
+
 textarea:focus {
   border: 5px solid var(--colour5);
 
@@ -446,7 +473,6 @@ border: 5px solid var(--colour4);
 padding-left: 20px;
 padding-right: 20px;
 position:relative; 
-z-index: -99; 
 margin-left: -10px;
 margin-right: -10px;
 text-transform: capitalize;
@@ -466,6 +492,7 @@ article span {
     right: 15px;
 }
 }
+
 
 .loader {
 border: 10px solid var(--colour4);
@@ -786,8 +813,7 @@ left: 0;
 
 .progress-bar {
 height: 3px;
-background: var(--main);
-width: 0%;
+background-color: var(--main);
 }
 
 .bar-container {
@@ -856,3 +882,506 @@ color: var(--colour5);
 border-radius: 5px;
 
 }
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: #CA4246;
+  
+  /* Create the gradient. */
+   background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+  
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  
+  /* Animate the text when loading the element. */
+    /* This animates it on page load and when hovering out. */
+    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+
+}
+
+.gradient-text:hover{
+    animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+    40% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+    80% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 650%;
+    }
+}
+  
+
+
+
+
+.rainbow  {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.rainbow h1 {
+  font-weight: 600;
+  font-size: 75px;
+  text-align: center;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.rainbow i {
+  right: 0;
+  position: absolute;
+}
+.loading {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%- 55px; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 55px;
+  background-color: white; /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+.loading2 {
+  color: var(--colour2);
+  bottom: 0;
+  position: relative;
+  text-align: center;
+
+}
+.box{
+  position: absolute;
+  top: 50%;  left: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+.loading ul{
+  position: relative;
+  height: 20px;  width: 300px;
+  margin: 20px 0;
+}
+.loading ul:nth-child(1){
+  left: 0px;
+}
+.loading ul:nth-child(2){
+  left: 20px;
+}
+.loading ul:nth-child(3){
+  left: 40px;
+}
+.loading ul li{
+  list-style: none;
+  width: 20px;  height: 20px;
+  background: var(--main);
+  position: absolute;
+  top: 0;  left: 0;
+  border-radius: 50%;
+  animation: animate 1s infinite linear;
+}
+@keyframes animate{
+  0%{
+    left: -20px;
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+     left: 100%; 
+     opacity: 0;
+  }   
+}
+.loading ul li:nth-child(1){
+  animation-delay: 0s;
+}
+.loading ul li:nth-child(2){
+  animation-delay: .2s;
+}
+.loading ul li:nth-child(3){
+  animation-delay: .4s;
+}
+.loading ul li:nth-child(4){
+  animation-delay: .6s;
+}
+.loading ul li:nth-child(5){
+  animation-delay: .8s;
+}
+
+
+div.freeShippingRibbon {
+  height: 35px;
+  width: 180px;
+  background-color: #9C1B21;
+  position: absolute;
+  top: 48px;
+  right: -6px;
+  text-align: center;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 24px;
+  white-space: nowrap;
+-webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.freeShippingRibbon:before {
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 37px;
+  border-left-width: 53px;
+  border-right-width: 26px;
+  content: "";
+  display: block;
+  left: -49px;
+  position: absolute;
+  width: 141%;
+  border-top-width: 0px;
+  border-bottom-color: #9c1b21;
+  top: -2px;
+  z-index: -1;
+}
+
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  color: #787878;
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #949CDF;
+  color: white;
+}
+
+.header .logo {
+  color: #555555;
+  display: block;
+  float: left;
+  font-size: 1.2em;
+  padding: 18px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:var(--main);
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+  z-index:100;
+  transition:  0.2s ;
+}
+
+.float i {
+  padding-top: 15px;
+}
+.my-float{
+	margin-top:16px;
+}
+.toggle-down {
+  transform: rotate(0deg);
+}
+
+
+.toggle-up {
+  transform: rotate(135deg);
+}
+
+
+.message {
+  background: #181818;
+  color: #FFF;
+  position: absolute;
+  top: -850px;
+  margin-top: 150px;
+  right: 35px;
+  border-radius: 15px;
+  width: 30%;
+  height: 70%;
+  padding: 20px;
+  transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  overflow: scroll;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  background-color: var(--bg);
+  
+}
+
+
+@media screen and (max-width: 900px) {
+  .message {
+    width: 100%;
+    top: -850px;
+    margin-top: 130px;
+    right: 35px;
+    border-radius: 15px;
+    height: 70%;
+    padding: 20px;
+    right: 0;
+    z-index: 2;
+  }
+  }
+  @media screen and (max-height: 500px) {
+    .message {
+      margin-top: 30px;
+      padding: 10px;
+      padding-top: 0;
+      height: 100%;
+
+    }
+    }
+.message h1 {
+  color: #FFF;
+}
+
+#toggle {
+  position: absolute;
+  appearance: none;
+  cursor: pointer;
+  left: -100%;
+  top: -100%;
+}
+ input[type=checkbox] {
+  display: none;
+}
+
+
+
+.container {
+  transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  padding: 5em 3em;
+}
+
+#toggle:checked ~ .message {
+  top: 0;
+}
+
+#toggle:checked ~ .container {
+  margin-top: 350px;
+  position: fixed;
+  top: 0;
+}
+
+#toggle:checked ~ .message {
+  position: fixed;
+}
+
+.comment {
+  border-radius: 5px;
+border: 5px solid var(--colour4);
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 20px;
+position:relative; 
+z-index: -99; 
+margin-left: -10px;
+margin-right: -10px;
+text-transform: capitalize;
+}
+
+.comment h3 {
+  font-size: 20px;
+}
+
+.comment span {
+  position: absolute;
+  top: -13.5px;
+  background-color: var(--bg);
+  right: 30px;
+  font-size: 14px;
+  color: var(--colour3);
+  padding-left: 5px;
+  padding-right: 5px;
+  }
+
+  #form-hide {
+    display: none;
+
+  }
+
+  .comment-header h2 {
+    font-size: 20px;
+    color: var(--colour3);
+  }
+
+  .comment-header hr {
+    color: var(--colour3);
+  }
+
+  .add-comment {
+    
+  }
+
+  .topics {
+    font-size: 18px;
+    background-color: var(--main);
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 30px;
+    color: var(--bg);
+    margin-bottom: 10px;
+  }

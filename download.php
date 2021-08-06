@@ -24,27 +24,8 @@
 </head>
 <body>
 <div id="top"></div>
-<div class="Topnav"  id="myTopnav">
-        <a class="top" >anypost</a>
+<?php include("assets/php/nav2.php");?>
 
-        <a href="javascript:void(0);" class="icon" onclick="fullnav()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-
-
-      <div id="fullnav">
-      <p>anypost</a>
-          <div class="exit-icon">
-      <a href="javascript:void(0);"  onclick="fullnav()">
-      <i class="fa fa-times"></i></div>
-</a>
-<div class="main">
-<a href="/download.php">download apk</a><br>
-        <a href="/report.php">report a comment</a><br>
-        <a href="https://github.com/wacko1805/anypost">source code</a>
-</div>
-</div>
 
 <main>
 <div id="header">download<br>apk.</div><br><br>
@@ -52,25 +33,18 @@
 <a href="anypost-v1.1.apk"><button>download</button<</a>
               
 </main>
-<footer>
-  <div class="mdc-bottom-navigation">
-        <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href=".">
-            <span class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
-                <span class="mdc-bottom-navigation__list-item__text">Home</span>
-            </span></a>
-            <a style="text-decoration: none; padding-left: 40px;" href="create.php">
-            <span
-            class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
-                <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
-            </span>
-        </nav>
-    </div>
-</footer>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- anypost 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9222991553459658"
+     data-ad-slot="9590689371"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
   <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script><script  src="./script.js"></script>
   <script>
 function fullnav() {

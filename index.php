@@ -13,36 +13,81 @@
 </noscript>
 <?php include("assets/php/nav.php");?>
 <main>
-<?php include("posts.php");?>
-</main>
-<footer>
-  <div class="mdc-bottom-navigation">
-        <nav  class="mdc-bottom-navigation__list">
-        <div id="home-btn">
-            <a style="text-decoration: none; padding-right: 40px;" href="#top">
-            <span  class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
-                <span class="mdc-bottom-navigation__list-item__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            </span></div>
-
-            <div id="up-btn">
-            <span  class="mdc-bottom-navigation__list-item mdc-bottom-navigation__list-item--activated mdc-ripple-surface mdc-ripple-surface--primary"
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                <span class="material-icons mdc-bottom-navigation__list-item__icon">arrow_upward</span>
-                <span class="mdc-bottom-navigation__list-item__text">Back to top</span>
-            </span></div>
-            <a style="text-decoration: none; padding-left: 40px;" href="create.php">
-            <span
-            class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                
-                <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
-                <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
-            </span>
-        </nav>
+<input type="checkbox" name="toggle" id="toggle" />
+<label for="toggle"></label>
+<div class="message"><h1> 
+<form  action="connect.php"   id="form" accept-charset="utf-8"  method="post">
+    <input type="text" name="title" id="title"  placeholder="Title"  required autocomplete="off"> <br>
+      <textarea  maxlength="500" rows="7"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" ></textarea> <br>
+      <input style="display:none;" type="text" name="date" value="<?= $date ?>">
+      <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
+      <select id="topic" name="topic">
+      <option selected disabled>Choose Topic (optional)</option>
+      <?php include("select-posts.php");?>
+  </select>
+      <div  class="submitp"><p><input type="submit" id='submit'   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="./t+c.php#main">Terms and conditions</a></i></p></div>
     </div>
-</footer>
-<script src="http://anypost.pixel-fy.com/assets/js/display.js"></script>
+</form>
+</h2>
+  
+<script>
+  $(document).ready(function() {
+    $("body").prepend('<div id="overlay" class="ui-widget-overlay" style="z-index: 1001; display: none;"></div>');
+    $("body").prepend("<div id='PleaseWait' class='loading' style='display: none;'><div class='box'><ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul></div> <h1 class='loading2'>Loading...</h1></div>");
+});
+
+$('#form').submit(function() {
+    var pass = true;
+    //some validations
+
+    if(pass == false){
+        return false;
+    }
+    $("#overlay, #PleaseWait").show();
+
+    return true;
+});
+</script>
+
+</div>
+
+<?php include("posts.php");?>
+<br>
+
+<br>
+<?php
+$path='posts/';
+function scan_dir($dir) {
+
+    $files = array();    
+    foreach (scandir($dir) as $file) {
+        $files[$file] = filemtime($dir . '/' . $file);
+    }
+
+    arsort($files);
+    $files = array_keys($files);
+
+    return ($files) ? $files : false;
+}
+$files=scan_dir($path);
+
+
+foreach ($files as $key => $value) {
+    if($value!="." && $value!="..")
+    {
+       
+        print_r (file_get_contents($path."/" .$value));
+        echo "</p></article></article><br><br>";
+    }
+}
+?>
+</main>
+<a onclick="toggle()" class="toggle-down float" >
+<input type="checkbox" name="toggle" id="toggle" />
+<label for="toggle">
+<i  class="fas fa-plus"></i></lable>
+</a>
+
+<script src="assets/js/display.js"></script>
 </body>
 </html>
