@@ -1328,7 +1328,7 @@ div.freeShippingRibbon {
   }
   @media screen and (max-height: 500px) {
     .message {
-      margin-top: 30px;
+      margin-top: 80px;
       padding: 10px;
       padding-top: 0;
       height: 100%;
