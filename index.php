@@ -15,20 +15,16 @@
 <main>
 <input type="checkbox" name="toggle" id="toggle" />
 <label for="toggle"></label>
-<div class="message"><h1> 
+<div class="message">
 <form  action="connect.php"   id="form" accept-charset="utf-8"  method="post">
     <input type="text" name="title" id="title"  placeholder="Title"  required autocomplete="off"> <br>
       <textarea  maxlength="500" rows="7"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" ></textarea> <br>
       <input style="display:none;" type="text" name="date" value="<?= $date ?>">
       <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
-      <select id="topic" name="topic">
-      <option selected disabled>Choose Topic (optional)</option>
-      <?php include("select-posts.php");?>
-  </select>
-      <div  class="submitp"><p><input type="submit" id='submit'   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="./t+c.php#main">Terms and conditions</a></i></p></div>
+      <div  class="submitp"><p><input type="submit" id='submit'   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="t+c.php#main">Terms and conditions</a></i></p></div>
     </div>
 </form>
-</h2>
+
   
 <script>
   $(document).ready(function() {
@@ -52,6 +48,7 @@ $('#form').submit(function() {
 </div>
 
 <?php include("posts.php");?>
+
 <br>
 
 <br>
@@ -81,13 +78,24 @@ foreach ($files as $key => $value) {
     }
 }
 ?>
+<script>
+   let attribute = document.getElementsByClassName('topics-hide');
+   for (let i = 0; i < attribute.length; i++) {
+      let impDiv = attribute[i];
+      let value = impDiv.innerHTML.trim();
+      if (value == 'No Topic' || value == '') {
+         impDiv.style.display = 'none';
+      }
+   }
+</script>
 </main>
 <a onclick="toggle()" class="toggle-down float" >
 <input type="checkbox" name="toggle" id="toggle" />
 <label for="toggle">
 <i  class="fas fa-plus"></i></lable>
 </a>
-
 <script src="assets/js/display.js"></script>
+<?php include("assets/php/footer.php");?>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
+
 <?php
 
-include("config.php");
 
 
 $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
@@ -24,8 +24,7 @@ if ($result->num_rows > 0) {
 
 while($row = $result->fetch_assoc()) {
 
-echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><a href='topics.php?id=" . $row["id"]. "'><span>" . $row["display_time"]. " </span></artilce></article></div><br>";
-
+echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><a  href='big.php?id=" . $row["id"]. "'><div class='more'><i class='far fa-comments'></i></a></div><span>" . $row["display_time"]. " </span></artilce></article></div><br>";
 }
 
 } else {

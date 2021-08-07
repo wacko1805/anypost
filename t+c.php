@@ -58,6 +58,7 @@ function fullnav() {
 <script >
  document.getElementById("myTopNav").style.opacity = "1";
 </script>
+<?php include("assets/php/footer.php");?>
 </body>
 </html>
 </html>

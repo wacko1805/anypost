@@ -1,7 +1,7 @@
 <html>
 <head>
   <?php include("config.php");?>
-
+  <title><?php include("assets/php/title-big.php") ?> | anypost</title>
 </head>
 <body>
 <noscript>
@@ -21,7 +21,6 @@ echo "Data Error";
 exit;
 }
 // MySQL connection string
-require "config.php"; 
 
 $count="SELECT *  FROM posts where id=?";
 

@@ -32,13 +32,12 @@ $title = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', 
 $comment = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'comment')))));
 $upload_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'date')))));
 $display_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'displaydate')))));
-$topic = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'topic')))));
 
 if (!empty($title)){
 if (!empty($comment)){
     if (!empty($upload_time)){
         if (!empty($display_time)){
-            if (!empty($topic)){
+           
     include("config.php");
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 if (mysqli_connect_error()){
@@ -46,8 +45,8 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 . mysqli_connect_error());
 }
 else{
-$sql = "INSERT INTO posts (title, comment, upload_time, display_time, topic)
-values ('$title','$comment','$upload_time','$display_time','$topic')";
+$sql = "INSERT INTO posts (title, comment, upload_time, display_time)
+values ('$title','$comment','$upload_time','$display_time')";
 if ($conn->query($sql)){
 echo "<article><h2><div class='loader'></div><br>
 Your post is uploading</h2></article>";
@@ -77,11 +76,7 @@ die();
 }
 }
 
-else{
-    echo "<article><h2>Sorry, there was an issue on our end. </h2></article>";
-    die();
-    }
-    }
+
 ?>
 
 </body>

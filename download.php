@@ -2,7 +2,6 @@
 <html>
 <head>
   <?php include("config.php"); 
-    
   ?>
   <title><?php echo $maintitle ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,6 +58,8 @@ function fullnav() {
 <script >
  document.getElementById("myTopNav").style.opacity = "1";
 </script>
+<?php include("assets/php/footer.php");?>
+
 </body>
 </html>
 </html>

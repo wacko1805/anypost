@@ -74,8 +74,8 @@ background-color: var(--bg);
   {
     opacity: 1;
     background-color: var(--bg);
-    padding-top: 120px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 80px;
     color: var(--colour2);
     text-align: center;
     font-size: 70px; 
@@ -446,10 +446,47 @@ opacity: 1;
 }
 
 footer {
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+  text-decoration: none;
+}
+
+footer .back-to-top  {
+	background-color: #949CDF;
+	border-radius: 30px;
+	padding: 5px 15px;
+	color: white;
+  text-decoration: none;
+}
+footer .links {
+	padding-top: 30px;
+
+}
+footer .links a {
+		color: #4E6166;
+		padding-left: 10px;
+		padding-right: 10px;
+}
+footer p {
+	padding-top: 20px;
+	color: #A6A6A6;
+}
+
+footer .social-links {
+	padding-top: 30px;
+}
+
+footer .social-links i {
+	padding: 10px;
+	font-size: 25px;
+	color: #555555;
+	text-decoration: none;
+	transition: 0.3s;
+}
+footer .social-links i:hover {
+	color: #949CDF;
 }
 .icon  {
 font-size: 30px;
@@ -493,7 +530,15 @@ article span {
 }
 }
 
-
+article .more {
+  position: absolute;
+bottom: 8px;
+right: 8px;
+font-size: 23px;
+color: var(--colour3);
+padding-left: 5px;
+padding-right: 5px;
+}
 .loader {
 border: 10px solid var(--colour4);
 border-radius: 50%;
@@ -580,9 +625,7 @@ main {
   
   }
 }
-#myTopnav {
 
-}
 #myTopnav a:hover {
 background-color: var(--colour4);
 color: var(--colour2);
@@ -644,10 +687,7 @@ display: inline;
 width: 8px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
 
-}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -1275,11 +1315,12 @@ div.freeShippingRibbon {
 @media screen and (max-width: 900px) {
   .message {
     width: 100%;
-    top: -850px;
+    top: -950px;
     margin-top: 130px;
     right: 35px;
+    height: 100%;
     border-radius: 15px;
-    height: 70%;
+    height: 100%;
     padding: 20px;
     right: 0;
     z-index: 2;
@@ -1303,7 +1344,6 @@ div.freeShippingRibbon {
   appearance: none;
   cursor: pointer;
   left: -100%;
-  top: -100%;
 }
  input[type=checkbox] {
   display: none;
@@ -1372,16 +1412,30 @@ text-transform: capitalize;
     color: var(--colour3);
   }
 
-  .add-comment {
-    
-  }
 
-  .topics {
+  .topics p {
     font-size: 18px;
     background-color: var(--main);
     display: inline-block;
-    padding: 3px 12px;
+    padding: 2px 19px;
     border-radius: 30px;
     color: var(--bg);
     margin-bottom: 10px;
+    
+    
   }
+  .topics {
+    color: var(--colour3);
+    font-size: 20px;
+    display: inline;
+  }
+
+  .topic-header {
+    display: inline;
+  }
+
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
