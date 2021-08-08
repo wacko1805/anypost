@@ -303,7 +303,7 @@ textarea:focus {
 }
 @media only screen and (max-width: 600px) {
 textarea {
-  height: 20%;
+  height: 200px;
 }
 }
 
@@ -1220,7 +1220,7 @@ div.freeShippingRibbon {
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 240px;
+  max-height: 340px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -1434,7 +1434,17 @@ text-transform: capitalize;
     display: inline;
   }
 
-
+  .topics2 {
+    font-size: 18px;
+    background-color: var(--main);
+    display: inline-block;
+    padding: 2px 19px;
+    border-radius: 30px;
+    color: var(--bg);
+    margin-bottom: 10px;
+    
+    
+  }
 .hidden {
   display: none;
   opacity: 0;
