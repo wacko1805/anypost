@@ -13,37 +13,48 @@
 <?php include("assets/php/nav.php");?>
 <main>
 
+<h2>Topics:</h2><br>
+
 
 
 <?php
 
 
-$edit_record = $_GET['topic'];
 
-$query = "select * from topics where topic='$edit_record'";
+$conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
 
-$run = mysqli_query($conn, $query);
 
-while($row = mysqli_fetch_array($run,MYSQLI_ASSOC))
-{
-$topic = $row['topic'];
-}
-?>
-<div class="topic-header">
- <div class='topics'>Topic: <p><?php echo $topic;?></p></div>
-</div>
-<?php
+if ($conn->connect_error) {
 
-$query="SELECT * FROM `posts`  WHERE `topic`='$topic'";
-$results = mysqli_query($conn, $query) or exit(mysqli_error());
+die("Connection failed: " . $conn->connect_error);
 
-while ($row = mysqli_fetch_array($results)) {
-
-//show only object_id, name and wish
-echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><a  href='big.php?id=" . $row["id"]. "'><div class='more'><i class='far fa-comments'></i></a></div><span>" . $row["display_time"]. " </span></artilce></article></div><br>";
 
 }
+
+
+
+$sql = "SELECT * FROM `topics` ORDER BY `topics`.`id` ASC ";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+
+
+while($row = $result->fetch_assoc()) {
+
+  echo " " . "<a class='topics2'  href='topics-post.php?topic=" . $row["topic"]. "'>" . $row["topic"]. "</a>";
+}
+
+} else {
+
+echo "<article><h2>Theres no posts!</h2></article>";
+
+}
+
+$conn->close();
+
 ?>
+
 
 </body>
 </html>

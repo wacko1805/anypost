@@ -31,12 +31,24 @@ if($stmt = $conn->prepare($count)){
  $result = $stmt->get_result();
  $row=$result->fetch_object();
 
-echo " " . "<article><h2>$row->title</h2><p>$row->comment</p><span>$row->display_time</span></artilce>";
+echo " " . "<article><h2>$row->title</h2><p>$row->comment</p><div class='topics'   id='topics'><a href='topics-post.php?topic=$row->topic'><p class='topics-hide' >$row->topic</p></div></a><span>$row->display_time</span></artilce>";
+
+
 
 }else{
 echo $connection->error;
 }
 ?>
+<script>
+   let attribute = document.getElementsByClassName('topics-hide');
+   for (let i = 0; i < attribute.length; i++) {
+      let impDiv = attribute[i];
+      let value = impDiv.innerHTML.trim();
+      if (value == 'No Topic' || value == '') {
+         impDiv.style.display = 'none';
+      }
+   }
+</script>
 </article>
 <div class="comment-header">
 <h2>Comments:</h2>
@@ -55,6 +67,8 @@ echo $connection->error;
 <input type="submit" id='submit'   name="submit" value="Submit">
     </div>
 </form>
+<script src="/assets/js/disable.js">
+</script>
 </div>
 <?php
 
