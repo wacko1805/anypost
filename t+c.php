@@ -36,7 +36,7 @@
     <li>Any code, weather it be html, css, js, php is not tolerated and will be removed immediately.</li>
 </ol></p>
 
-
+<p>I am not liable any advice or tips given on anypost. What ever is posted does not belong to anypost</p>
 <p>AnyPost reserves the right to change or amend the code of conduct at any time and without notice.  You are encouraged to review these guidelines from time to time to ensure your adherence and compliance.</p>
 
 
