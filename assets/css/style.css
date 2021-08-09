@@ -359,6 +359,7 @@ box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 
 overflow: hidden;
 z-index: 8;
 transition: 0.2s;
+display: none;
 }
 
 .mdc-bottom-navigation__list {
@@ -534,10 +535,19 @@ article .more {
   position: absolute;
 bottom: 8px;
 right: 8px;
-font-size: 23px;
+font-size: 20px;
 color: var(--colour3);
 padding-left: 5px;
 padding-right: 5px;
+}
+
+article .more a {
+  color: var(--colour3);
+  transition: 0.2s;
+}
+
+article .more a:hover {
+  color: var(--main);
 }
 .loader {
 border: 10px solid var(--colour4);
