@@ -54,7 +54,9 @@ echo "<article><h2>Theres no posts!</h2></article>";
 $conn->close();
 
 ?>
-
+</main>
+<div style="margin-bottom: 400px;"></div>
+<?php include("assets/php/footer.php");?>
 
 </body>
 </html>

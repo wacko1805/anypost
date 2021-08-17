@@ -55,7 +55,41 @@ $displaydate = "Uploaded by Dev";  ?>
                         <input type='submit' id='theButton'   name='submit' value='Submit'>
                   </div>
             </form>
-                ";  
+
+            <form  action='add-topic.php'  method='post'>
+                <input type='text' name='topic' id='topic'  placeholder='Topic' required autocomplete='off'> <br>
+         
+                  
+                        <input type='submit' id='theButton'   name='submit' value='Submit'>
+                  </div>
+            </form>
+            <table border="2">
+  <tr>
+
+    <td>id</td>
+    <td>Topic</td>
+    <td>Delete</td>
+    <td>edit</td>
+  </tr>
+
+<?php
+
+
+$records = mysqli_query($db,"select * from topics ORDER BY `topics`.`id` DESC"); // fetch data from database
+
+while($data = mysqli_fetch_array($records))
+{
+?>
+  <tr>
+    <td><?php echo $data['id']; ?></td>
+    <td><?php echo $data['topic']; ?></td>
+    <td><a href="edit-topic.php?id=<?php echo $data['id']; ?>">Edit</a></td>
+    <td><a href="delete-topic.php?id=<?php echo $data['id']; ?>">Delete</a></td>
+  </tr>	
+<?php
+}
+?>
+</table>
 
 
 <table border="2">

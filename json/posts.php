@@ -1,11 +1,8 @@
 <?php
-     $conn = mysqli_connect("localhost","root","","anypost") or die("Error " . mysqli_error($connection));
+include("config.php");
 
-     
- header("Access-Control-Allow-Origin: *");
- header("content-type: application/json");
      //fetch table rows from mysql db
-     $sql = "select * from posts";
+     $sql = "select * from posts ORDER BY `posts`.`upload_time` DESC";
      $result = mysqli_query($conn, $sql) or die("Error in Selecting " . mysqli_error($conn));
 
     //create an array

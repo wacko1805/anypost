@@ -1459,3 +1459,28 @@ text-transform: capitalize;
   display: none;
   opacity: 0;
 }
+
+.nextprev {
+  text-align: center;
+}
+
+.nextprev a {
+  padding: 10px 20px;
+  background-color: var(--main);
+  color: var(--bg);
+  border-radius: 15px;
+}
+
+.nextprev a:hover {
+  color: var(--bg);
+  background-color: var(--colour2);
+}
+
+.big-article h2 {
+  margin-bottom: -3px;
+}
+.big-article  span  {
+  font-size: 15px;
+  color: var(--colour5);
+  font-weight: 15;
+}

@@ -2,6 +2,11 @@
 <head>
   <?php include("config.php");?>
   <title><?php include("assets/php/title-big.php") ?> | anypost</title>
+  <style>
+    #header {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <noscript>
@@ -12,6 +17,7 @@
 </noscript>
 <?php include("assets/php/nav.php");?>
 <main>
+<div style="margin-bottom: 50px;"></div>
 
 <?php
 $id=$_GET['id'];
@@ -30,8 +36,7 @@ if($stmt = $conn->prepare($count)){
 
  $result = $stmt->get_result();
  $row=$result->fetch_object();
-
-echo " " . "<article><h2>$row->title</h2><p>$row->comment</p><div class='topics'   id='topics'><a href='topics-post.php?topic=$row->topic'><p class='topics-hide' >$row->topic</p></div></a><span>$row->display_time</span></artilce>";
+echo " " . "<div class='big-article'><h2>$row->title </h2><span>$row->display_time</span><br><br><p>$row->comment</p><div class='topics'   id='topics'><a href='topics-post.php?topic=$row->topic'><p class='topics-hide' >$row->topic</p></div></a></div>";
 
 
 
@@ -50,9 +55,9 @@ echo $connection->error;
    }
 </script>
 </article>
+<a class="hidden" href="image.php?s=fff_000_500_500&t=<?php echo $row->title; ?>&c=<?php echo $row->comment; ?>">Share</a>
 <div class="comment-header">
 <h2>Comments:</h2>
-
 </div>
 
 <button class="add-comment" onclick="myFunction()">Add Comment</button>
@@ -97,5 +102,7 @@ function myFunction() {
 </script>
 
 
+</main>
+<div style="margin-bottom: 400px;"></div>
 
-
+<?php include("assets/php/footer.php");?>

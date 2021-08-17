@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include("config.php");?>
 
+  <?php include("config.php");?>
+  <title>Anypost</title>
 </head>
 <body>
 <noscript>
@@ -13,6 +15,7 @@
 </noscript>
 <?php include("assets/php/nav.php");?>
 <main>
+
 <input type="checkbox" name="toggle" id="toggle" />
 <label for="toggle"></label>
 <div class="message">
@@ -24,6 +27,7 @@
       <select id="topic" name="topic">
       <option id="no topic">No Topic</option>
       <?php include("select-posts.php");?>
+
   </select>
       <div  class="submitp"><p><input type="submit" id='submit'   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="t+c.php#main">Terms and conditions</a></i></p></div>
     </div>
@@ -52,7 +56,9 @@ $('#form').submit(function() {
 
 </div>
 
-<?php include("posts.php");?>
+
+<?php include("posts.php");
+?>
 
 <br>
 
@@ -61,7 +67,7 @@ $('#form').submit(function() {
 $path='posts/';
 function scan_dir($dir) {
 
-    $files = array();    
+   $files = array();    
     foreach (scandir($dir) as $file) {
         $files[$file] = filemtime($dir . '/' . $file);
     }
@@ -76,11 +82,11 @@ $files=scan_dir($path);
 
 foreach ($files as $key => $value) {
     if($value!="." && $value!="..")
-    {
+   {
        
         print_r (file_get_contents($path."/" .$value));
-        echo "</p></article></article><br><br>";
-    }
+       echo "</p></article></article><br><br>";
+   }
 }
 ?>
 <script>

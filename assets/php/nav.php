@@ -20,6 +20,7 @@
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
           <li><a href=".">Home</a></li>
+          <li><a href="/topics.php">Topics</a></li>
           <li><a href="../download.php">Download APK</a></li>
           <li><a href="/t+c.php">terms and conditions</a></li>
           <li><a href="https://github.com/wacko1805/anypost">source code</a></li>
