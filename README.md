@@ -60,3 +60,6 @@ INSERT INTO `login` (`username`, `password`, `a`, `aa`) VALUES
 ('user', 'pass', 0, 0);
 COMMIT;
 ```
+
+## To Do:
+* Fix Admin area
