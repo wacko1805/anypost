@@ -2,7 +2,7 @@
         $host = "127.0.0.1";  
         $user = "root";  
         $password = '';  
-        $db_name = "ap-dev";  
+        $db_name = "anypost";  
         include("../assets/php/head.php");
         $maintitle = "anypost";
 
