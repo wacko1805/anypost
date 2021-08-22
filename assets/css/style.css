@@ -350,101 +350,7 @@ input[type=submit]:hover {
 background-color: var(--colour4);
 color: var(--bg);
 }
-/* MDC stuff */
-.mdc-bottom-navigation {
-height: 70px;
-background-color: var(--mdc-theme-background, var(--bg));
-width: 100%;
-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-overflow: hidden;
-z-index: 8;
-transition: 0.2s;
-display: none;
-}
 
-.mdc-bottom-navigation__list {
-display: flex;
-justify-content: center;
-height: 100%;
-}
-.mdc-bottom-navigation__list-item {
-flex: 1 1 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-padding: 0 12px;
-min-width: 60px;
-max-width: 168px;
-box-sizing: border-box;
-color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
--webkit-user-select: none;
-   -moz-user-select: none;
-    -ms-user-select: none;
-        user-select: none;
-        color: var(--main);
-}
-.mdc-bottom-navigation__list-item__icon {
-padding-top: 15px;
-pointer-events: none;
-transition-property: padding-top, color;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-transition-duration: 100ms;
-color: var(--main);
-}
-.mdc-bottom-navigation__list-item__icon path {
-fill: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
-}
-.mdc-bottom-navigation__list-item__text {
-margin-top: auto;
-padding-bottom: 10px;
-font-size: 0.75rem;
-pointer-events: none;
-transition-property: font-size, color;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-transition-duration: 100ms;
-}
-.mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__icon {
-padding-top: 15px;
-}
-.mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__text {
-font-size: 0.875rem;
-}
-.mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__icon, .mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__text {
-color: var(--colour2);
-}
-.mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__icon path, .mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__text path {
-fill: var(--mdc-theme-primary, var(--main));
-}
-.mdc-bottom-navigation--shifting .mdc-bottom-navigation__list-item {
-min-width: 56px;
-max-width: 96px;
-transition-property: min-width, max-width;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-transition-duration: 100ms;
-}
-.mdc-bottom-navigation--shifting .mdc-bottom-navigation__list-item .mdc-bottom-navigation__list-item__icon {
-padding-top: 16px;
-transition-property: padding-top;
-}
-.mdc-bottom-navigation--shifting .mdc-bottom-navigation__list-item .mdc-bottom-navigation__list-item__text {
-position: absolute;
-line-height: 10px;
-bottom: 0;
-opacity: 0;
-transition-property: opacity, font-size;
-}
-.mdc-bottom-navigation--shifting .mdc-bottom-navigation__list-item--activated {
-min-width: 96px;
-max-width: 168px;
-}
-.mdc-bottom-navigation--shifting .mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__icon {
-padding-top: 8px;
-transition-property: padding-top;
-}
-.mdc-bottom-navigation--shifting .mdc-bottom-navigation__list-item--activated .mdc-bottom-navigation__list-item__text {
-opacity: 1;
-}
 
 footer {
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -506,100 +412,55 @@ a {
 text-decoration: none;
 }
 article {
-border-radius: 5px;
-border: 5px solid var(--colour4);
-padding-left: 20px;
-padding-right: 20px;
-position:relative; 
-margin-left: -10px;
-margin-right: -10px;
-text-transform: capitalize;
-}
-article span {
-position: absolute;
-top: -13.5px;
-background-color: var(--bg);
-right: 30px;
-font-size: 14px;
-color: var(--colour3);
-padding-left: 5px;
-padding-right: 5px;
-}
-@media only screen and (max-width: 600px) {
-article span {
-    right: 15px;
-}
-}
-
-article .more {
+  border-radius: 5px;
+  border: 5px solid var(--colour4);
+  padding-left: 20px;
+  padding-right: 20px;
+  position:relative; 
+  margin-left: -10px;
+  margin-right: -10px;
+  text-transform: capitalize;
+  transition: 0.1s;
+  }
+  article span {
   position: absolute;
-bottom: 8px;
-right: 8px;
-font-size: 20px;
-color: var(--colour3);
-padding-left: 5px;
-padding-right: 5px;
-}
-
-article .more a {
+  top: -13.5px;
+  background-color: var(--bg);
+  right: 30px;
+  font-size: 14px;
   color: var(--colour3);
-  transition: 0.2s;
-}
+  padding-left: 5px;
+  padding-right: 5px;
+  }
+  @media only screen and (max-width: 600px) {
+  article span {
+      right: 15px;
+  }
+  }
+  
+  article .more {
+    position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 20px;
+  color: var(--colour3);
+  padding-left: 5px;
+  padding-right: 5px;
+  }
+  
+  article .more a {
+    color: var(--colour3);
+    transition: 0.2s;
+  }
+  
+  article .more a:hover {
+    color: var(--main);
+  }
 
-article .more a:hover {
-  color: var(--main);
-}
-.loader {
-border: 10px solid var(--colour4);
-border-radius: 50%;
-border-top: 10px solid var(--main);
-width: 120px;
-height: 120px;
-margin-left: 37%;
--webkit-animation: spin 2s linear infinite; /* Safari */
-animation: spin 2s linear infinite;
-}
+  article:hover {
+    border: 5px solid #dad6fe;
+  }
 
-/* Safari */
-@-webkit-keyframes spin {
-0% { -webkit-transform: rotate(0deg); }
-100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
-}
-
-
-/*#myTopnav*/
-
-#myTopnav{
-position:fixed;
-top: 0;
-left: 0;
-width: 100%;
-opacity: 0;
-  transition: all .1s;
-overflow: hidden;
-padding: 10px;
-background-color: var(--bg);
-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-#mytopnav .always {
-opacity: 1;
-}
-#myTopnav a {
-float: left;
-
-color: var(--colour3);
-text-align: center;
-padding: 8px 16px;
-text-decoration: none;
-font-size: 17px;
-border-radius: 5px;
-transition: 0.1s;
-}
 
 @media only screen and (max-height: 500px) {
 main {
@@ -634,61 +495,6 @@ main {
   margin-right: 0;
   
   }
-}
-
-#myTopnav a:hover {
-background-color: var(--colour4);
-color: var(--colour2);
-}
-
-#myTopnav a.active {
-background-color: var(--main);
-color: white;
-transition: 0.2s;
-}
-
-.nav-right {
-float: right;
-}
-
-
-#myTopnav .icon {
-transition: 0.2s;
-float: right;
-margin-right: 15px;
-display: inline;
-
-}
-#myTopnav .github {
-  display: none;
-}
-@media screen and (max-width: 900px) {
-.nav-right {
-    display: none;
-}
-}
-@media screen and (max-width: 900px) {
-#myTopnav #responsive .top{
-    width: 100%;
-    transition: 0.2s;
-
-}
-}
-
-@media screen and (max-width: 900px) {
-#myTopnav a:not(:first-child) {display: none; 
-}
-#myTopnav a.icon {
-  float: right;
-  margin-right: 15px;
-  display: inline;
-  
-}
-}
-@media screen and (max-width: 900px) {
-.github2 {
-  display: none;
-}
 }
 
 
@@ -933,113 +739,13 @@ border-radius: 5px;
 
 }
 
-.gradient-text {
-  /* Fallback: Set a background color. */
-  background-color: #CA4246;
-  
-  /* Create the gradient. */
-   background-image: linear-gradient(
-        45deg,
-        #CA4246 16.666%, 
-        #E16541 16.666%, 
-        #E16541 33.333%, 
-        #F18F43 33.333%, 
-        #F18F43 50%, 
-        #8B9862 50%, 
-        #8B9862 66.666%, 
-        #476098 66.666%, 
-        #476098 83.333%, 
-        #A7489B 83.333%);
-  
-  /* Set the background size and repeat properties. */
-  background-size: 100%;
-  background-repeat: repeat;
 
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  
-  /* Animate the text when loading the element. */
-    /* This animates it on page load and when hovering out. */
-    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
-
-}
-
-.gradient-text:hover{
-    animation: rainbow-text-simple-animation 0.5s ease-in forwards;
-}
-
-
-/* Move the background and make it smaller. */
-/* Animation shown when entering the page and after the hover animation. */
-@keyframes rainbow-text-simple-animation-rev {
-    0% {
-        background-size: 650%;
-    }
-    40% {
-        background-size: 650%;
-    }
-    100% {
-        background-size: 100%;
-    }
-}
-
-/* Move the background and make it larger. */
-/* Animation shown when hovering over the text. */
-@keyframes rainbow-text-simple-animation {
-    0% {
-        background-size: 100%;
-    }
-    80% {
-        background-size: 650%;
-    }
-    100% {
-        background-size: 650%;
-    }
-}
   
 
 
 
 
-.rainbow  {
-  padding-top: 80px;
-  padding-bottom: 60px;
-}
 
-.rainbow h1 {
-  font-weight: 600;
-  font-size: 75px;
-  text-align: center;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-}
-.rainbow i {
-  right: 0;
-  position: absolute;
-}
-.loading {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%- 55px; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 55px;
-  background-color: white; /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-}
-.loading2 {
-  color: var(--colour2);
-  bottom: 0;
-  position: relative;
-  text-align: center;
-
-}
 .box{
   position: absolute;
   top: 50%;  left: 50%;
@@ -1189,10 +895,11 @@ div.freeShippingRibbon {
 .header .menu-icon {
   cursor: pointer;
   display: inline-block;
-  float: right;
   padding: 28px 20px;
   position: relative;
   user-select: none;
+  float: right;
+
 }
 
 .header .menu-icon .navicon {
@@ -1408,10 +1115,6 @@ text-transform: capitalize;
   padding-right: 5px;
   }
 
-  #form-hide {
-    display: none;
-
-  }
 
   .comment-header h2 {
     font-size: 20px;
@@ -1483,4 +1186,93 @@ text-transform: capitalize;
   font-size: 15px;
   color: var(--colour5);
   font-weight: 15;
+}
+
+
+.random-post {
+
+}
+.random-post .main {
+    background-color: #dad6fe;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+.random-post .main h2 {
+    color: #9088d4;
+    font-size: 35px;
+}
+.random-post .main p {
+    color: #656565;
+    font-size: 25px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+.random-post .badge {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.random-post .badge a {
+    text-align: center;
+    background-color: #dad6fe;
+  border-radius: 30px;
+  padding: 5px 15px;
+  color: #9088d4;
+    text-decoration: none;
+    margin: 5px;
+
+}
+.random-post .badge a#time{
+    order:1;
+    flex-grow: 1; 
+}
+.random-post .badge a#topics{
+    order:2;
+    flex-grow: 2; 
+}
+
+.random-post .badge a#comment{
+    order:3;
+    flex-grow: 3; 
+}
+
+.random-post .badge #time,.random-post .badge #topics,.random-post .badge #comment{
+    display:block;
+}
+
+.buttons {
+  text-align: center;
+position: fixed;
+bottom: 20px;
+left: 30%;
+right: 30%;
+ 
+}
+@media only screen and (max-width: 800px) {
+.buttons {
+bottom: 0;
+left: 0;
+right: 0;
+ 
+}
+}
+.buttons .badge  {
+background-color: #949CDF;
+border-radius: 30px;
+padding: 5px 15px;
+color: white;
+display: inline-block;
+text-align: center;
+text-decoration: none;
+margin-bottom: 10px;
+cursor: pointer;
 }

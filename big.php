@@ -17,7 +17,7 @@
 </noscript>
 <?php include("assets/php/nav.php");?>
 <main>
-<div style="margin-bottom: 50px;"></div>
+<div style="margin-bottom: 100px;"></div>
 
 <?php
 $id=$_GET['id'];
@@ -36,7 +36,13 @@ if($stmt = $conn->prepare($count)){
 
  $result = $stmt->get_result();
  $row=$result->fetch_object();
-echo " " . "<div class='big-article'><h2>$row->title </h2><span>$row->display_time</span><br><br><p>$row->comment</p><div class='topics'   id='topics'><a href='topics-post.php?topic=$row->topic'><p class='topics-hide' >$row->topic</p></div></a></div>";
+ 
+ $id = $row->id;
+ $title = $row->title;
+ $comment = $row->comment;
+ $date = $row->display_time;
+ $topic = $row->topic;
+ echo " " . "<div class='big-article'><h2>$row->title </h2><span>$row->display_time</span><br><br><p>$row->comment</p><div class='topics'   id='topics'><a href='topics-post.php?topic=$row->topic'><p class='topics-hide' >$row->topic</p></div></a></div>";
 
 
 
@@ -44,6 +50,7 @@ echo " " . "<div class='big-article'><h2>$row->title </h2><span>$row->display_ti
 echo $connection->error;
 }
 ?>
+
 <script>
    let attribute = document.getElementsByClassName('topics-hide');
    for (let i = 0; i < attribute.length; i++) {
@@ -60,24 +67,21 @@ echo $connection->error;
 <h2>Comments:</h2>
 </div>
 
-<button class="add-comment" onclick="myFunction()">Add Comment</button>
 
-<div id="form-hide">
 <form  action="comment.php"   id="form" accept-charset="utf-8"  method="post">
         <input style="display:none;" type="text" name="post_id" value="<?php echo "$row->id"?>">
-      <textarea  maxlength="500"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" ></textarea> <br>
+      <input type="text"  maxlength="500"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" > <br>
       <input style="display:none;" type="text" name="date" value="<?= $date ?>">
       <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
       
 <input type="submit" id='submit'   name="submit" value="Submit">
-    </div>
 </form>
 <script src="/assets/js/disable.js">
 </script>
 </div>
 <?php
 
-$query="SELECT * FROM `comments`  WHERE `post_id`='$row->id'  ORDER BY `comments`.`upload_time` DESC";
+$query="SELECT * FROM `comments`  WHERE `post_id`='$row->id'  ORDER BY `comments`.`id` DESC";
 $results = mysqli_query($conn, $query) or exit(mysqli_error());
 
 while ($row = mysqli_fetch_array($results)) {
@@ -89,19 +93,6 @@ while ($row = mysqli_fetch_array($results)) {
     echo '</div><br>';
 }
 ?>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("form-hide");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-
-
 </main>
 <div style="margin-bottom: 400px;"></div>
 
