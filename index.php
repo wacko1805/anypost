@@ -2,20 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <?php include("config.php");?>
   <title>Anypost</title>
 </head>
 <body>
-<noscript>
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>Please enable Javascript for full funcionality!</strong>
-</div>
-</noscript>
 <?php include("assets/php/nav.php");?>
 <main>
-
 <input type="checkbox" name="toggle" id="toggle" />
 <label for="toggle"></label>
 <div class="message">
@@ -27,14 +19,11 @@
       <select id="topic" name="topic">
       <option id="no topic">No Topic</option>
       <?php include("select-posts.php");?>
-
   </select>
       <div  class="submitp"><p><input type="submit" id='submit'   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="t+c.php#main">Terms and conditions</a></i></p></div>
     </div>
 </form>
-<script src="/assets/js/disable.js">
-</script>
-  
+<script src="/assets/js/disable.js"></script>
 <script>
   $(document).ready(function() {
     $("body").prepend('<div id="overlay" class="ui-widget-overlay" style="z-index: 1001; display: none;"></div>');
@@ -89,7 +78,7 @@ foreach ($files as $key => $value) {
    }
 }
 ?>
-<script>
+        <script>
    let attribute = document.getElementsByClassName('topics-hide');
    for (let i = 0; i < attribute.length; i++) {
       let impDiv = attribute[i];
@@ -101,7 +90,6 @@ foreach ($files as $key => $value) {
 </script>
 </main>
 <a onclick="toggle()" class="toggle-down float" >
-<input type="checkbox" name="toggle" id="toggle" />
 <label for="toggle">
 <i  class="fas fa-plus"></i></lable>
 </a>

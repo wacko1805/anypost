@@ -1,44 +1,24 @@
 <html>
 <head>
   <?php include("config.php");?>
-
+  <title>Topics | Anypost</title>
 </head>
 <body>
-<noscript>
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>Please enable Javascript for full funcionality!</strong>
-</div>
-</noscript>
 <?php include("assets/php/nav.php");?>
 <main>
-
 <h2>Topics:</h2><br>
-
-
-
 <?php
-
-
-
 $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
 
-
 if ($conn->connect_error) {
-
 die("Connection failed: " . $conn->connect_error);
-
-
 }
-
-
 
 $sql = "SELECT * FROM `topics` ORDER BY `topics`.`id` ASC ";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-
 
 while($row = $result->fetch_assoc()) {
 
@@ -57,6 +37,5 @@ $conn->close();
 </main>
 <div style="margin-bottom: 400px;"></div>
 <?php include("assets/php/footer.php");?>
-
 </body>
 </html>

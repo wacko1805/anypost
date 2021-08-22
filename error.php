@@ -2,7 +2,6 @@
 <html>
 <head>
   <?php include("config.php");?>
-
 </head>
 <body>
 <?php include("assets/php/nav.php");?>
@@ -28,23 +27,4 @@ if ($title == false || strlen($status) != 3) {
 echo '<article><h2>'.$title.'</h2>
 <p>'.$message.'</p></article>';
 ?>
-<footer>
-  <div class="mdc-bottom-navigation">
-        <nav class="mdc-bottom-navigation__list">
-            <a style="text-decoration: none; padding-right: 40px;" href=".">
-            <span class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                <span class="material-icons mdc-bottom-navigation__list-item__icon">house</span>
-                <span class="mdc-bottom-navigation__list-item__text">Home</span>
-            </span></a>
-            <a style="text-decoration: none; padding-left: 40px;" href="create.php">
-            <span
-            class="mdc-bottom-navigation__list-item mdc-ripple-surface mdc-ripple-surface--primary"  
-                data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>
-                <span class="material-icons mdc-bottom-navigation__list-item__icon">add</span>
-                <span class="mdc-bottom-navigation__list-item__text">Create a post</span></a>
-            </span>
-        </nav>
-    </div>
-</footer>
 <script src="assets/js/display.js"></script>

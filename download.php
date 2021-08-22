@@ -1,37 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include("config.php"); 
-    
-  ?>
+  <?php include("config.php"); ?>
   <title><?php echo $maintitle ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-  #myTopnav{
-    opacity: 1;
-    position: absolute;
-  }
-  #header {
-  padding-top: 160px;
-  padding-bottom: 5px;
-    text-align: left;
-    font-size: 55px;
-}
-  </style>
 </head>
 <body>
 <div id="top"></div>
-<?php include("assets/php/nav2.php");?>
-
-
+<?php include("assets/php/nav.php");?>
 <main>
-<div id="header">download<br>apk.</div><br><br>
-
-<a href="anypost-v1.1.apk"><button>download</button<</a>
-              
+<h3>Download APK:</h3>
+<a href="anypost-v1.1.apk"><button>download</button<</a> 
 </main>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- anypost 2 -->
@@ -44,23 +22,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
-  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script><script  src="./script.js"></script>
-  <script>
-function fullnav() {
-  var x = document.getElementById("fullnav");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-<script >
- document.getElementById("myTopNav").style.opacity = "1";
-</script>
 <?php include("assets/php/footer.php");?>
-
 </body>
 </html>
 </html>

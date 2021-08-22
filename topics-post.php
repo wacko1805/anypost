@@ -1,22 +1,12 @@
 <html>
 <head>
   <?php include("config.php");?>
-
+  <title>Anypost</title>
 </head>
 <body>
-<noscript>
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>Please enable Javascript for full funcionality!</strong>
-</div>
-</noscript>
 <?php include("assets/php/nav.php");?>
 <main>
-
-
-
 <?php
-
 
 $edit_record = $_GET['topic'];
 
@@ -29,12 +19,17 @@ while($row = mysqli_fetch_array($run,MYSQLI_ASSOC))
 $topic = $row['topic'];
 }
 ?>
+
+
 <div class="topic-header">
  <div class='topics'>Topic: <p><?php echo $topic;?></p></div>
 </div>
+
+
 <?php
 
 $query="SELECT * FROM `posts`  WHERE `topic`='$topic' ORDER BY `posts`.`upload_time` DESC ";
+
 $results = mysqli_query($conn, $query) or exit(mysqli_error());
 
 while($row = $results->fetch_assoc()) {
@@ -51,13 +46,11 @@ while($row = $results->fetch_assoc()) {
   } else {
       $comments_ave = "";
   }
-echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><div class='topics'   id='topics'><a href='topics-post.php?topic=" . $row["topic"]. "'><p class='topics-hide' >" . $row["topic"]. "</p></div></a><a  href='big.php?id=" . $row["id"]. "'><br><div class='more'><i class='fas fa-reply'></i> ";
+echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><a  href='big.php?id=" . $row["id"]. "'><br><div class='more'><i class='fas fa-reply'></i> ";
 echo $comments_ave;
 echo "</i></a></div><span>" . $row["display_time"]. " </span></artilce></article></div><br>";
 }
-
-
 ?>
-
+<?php include("assets/php/footer.php");?>
 </body>
 </html>
