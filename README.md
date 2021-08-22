@@ -48,18 +48,16 @@ INSERT INTO `topics` (`id`, `topic`) VALUES
 For Dev:
 
 ```
-CREATE TABLE `login` (
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `a` int(11) NOT NULL,
-  `aa` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `accounts` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-INSERT INTO `login` (`username`, `password`, `a`, `aa`) VALUES
-('user', 'pass', 0, 0);
-COMMIT;
+INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES
+(1, 'test', 'test', 'test@test.com'),
 ```
 
-## To Do:
-* Fix Admin area
+
