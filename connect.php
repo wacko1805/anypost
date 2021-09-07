@@ -1,30 +1,11 @@
-<!DOCTYPE html>
+
 <?php
 /* This will give an error. Note the output
  * above, which is before the header() call */
 header('Location: .');
 ?>
-<html>
-<head>
-  <?php include("config.php");?>
-  <style>
-      article {
-          text-align: center;
-      }
-      header {
-        padding-bottom: 50px;
 
-      }
-      </style>
 
-</head>
-<body>
-<?php include("assets/php/nav.php");?>
-<main>
-
-<script language="JavaScript" type="text/javascript">
-setTimeout("location.href = 'index.php'",2000); 
-</script>
 <?php
 
 

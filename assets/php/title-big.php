@@ -4,7 +4,11 @@ if(!is_numeric($id)){
 echo "Data Error";
 exit;
 }
-
+$result = $conn->query("SELECT * FROM posts where id=$id");
+$result = $result->fetch_row();
+if(empty($result)){
+  echo "Sorry, the post you are looking for does not exist!";
+}else{
 $count="SELECT *  FROM posts where id=?";
 
 if($stmt = $conn->prepare($count)){
@@ -17,4 +21,5 @@ if($stmt = $conn->prepare($count)){
 }else{
   echo $connection->error;
   }
+}
   ?>

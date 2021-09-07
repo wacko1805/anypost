@@ -1,18 +1,7 @@
 <footer>
                 <a href="#top" class="back-to-top">back to top</a>
                 <br><br>
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9222991553459658"
-     crossorigin="anonymous"></script>
-<!-- anypost-footer -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9222991553459658"
-     data-ad-slot="1009899267"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
                 <div class="social-links">
                 <a href="https://t.me/wacko1805"><i class="fab fa-telegram-plane"></i></a>
                 <a href="https://www.instagram.com/wacko1805/"><i class="fab fa-instagram"></i></a>
