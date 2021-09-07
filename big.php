@@ -24,8 +24,17 @@ $id=$_GET['id'];
 // Checking data it is a number or not
 if(!is_numeric($id)){
 echo "Data Error";
-exit;
 }
+
+$comment_error = " <div class='big-article'><h2>Sorry, the Post your looking for does not exist!</h2><br><div class='topics'   id='topics'><a href='/'><p class='topics-hide' >Go Back</p></div></a></div>";
+$result = $conn->query("SELECT * FROM posts where id=$id");
+$result = $result->fetch_row();
+if(empty($result)){
+    echo $comment_error;
+}else{
+ 
+
+
 // MySQL connection string
 
 $count="SELECT *  FROM posts where id=?";
@@ -49,6 +58,7 @@ if($stmt = $conn->prepare($count)){
 }else{
 echo $connection->error;
 }
+}
 ?>
 
 <script>
@@ -62,38 +72,40 @@ echo $connection->error;
    }
 </script>
 </article>
-<a class="hidden" href="image.php?s=fff_000_500_500&t=<?php echo $row->title; ?>&c=<?php echo $row->comment; ?>">Share</a>
-<div class="comment-header">
-<h2>Comments:</h2>
-</div>
+<?php
+if(empty($result)){
+  echo "";
+}else{
+include('assets/php/comment-form.php');}?>
 
 
-<form  action="comment.php"   id="form" accept-charset="utf-8"  method="post">
-        <input style="display:none;" type="text" name="post_id" value="<?php echo "$row->id"?>">
-      <input type="text"  maxlength="500"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" > <br>
-      <input style="display:none;" type="text" name="date" value="<?= $date ?>">
-      <input style="display:none;" type="text" name="displaydate" value="<?= $displaydate ?> <?= $timezone ?>">
-      
-<input type="submit" id='submit'   name="submit" value="Submit">
-</form>
+
 <script src="/assets/js/disable.js">
 </script>
 </div>
 <?php
 
+if(empty($result)){
+    echo "";
+}else{
+ 
 $query="SELECT * FROM `comments`  WHERE `post_id`='$row->id'  ORDER BY `comments`.`id` DESC";
 $results = mysqli_query($conn, $query) or exit(mysqli_error());
 
 while ($row = mysqli_fetch_array($results)) {
-
+  $commid = $row['id'];
 //show only object_id, name and wish
     echo '<div class="comment">';
     echo '<h3>' . $row['comment'] . '</h3>';
     echo '<span>' . $row['display_time'] . '</span>';
     echo '</div><br>';
 }
+}
 ?>
+
+
 </main>
+
 <div style="margin-bottom: 400px;"></div>
 
 <?php include("assets/php/footer.php");?>
