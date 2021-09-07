@@ -1,7 +1,4 @@
 <?php
-// Check connection
-
-
 
 include('config.php');
 
@@ -61,8 +58,8 @@ $conn->close();
                 <p><?php echo $comment; ?></p>
             </div>
             <div class="badge">
-                <a id="time" ><?php echo $date; ?></a>
-                <a id="topics" class="topics-hide" href="#"><?php echo $topic; ?></a>
+                <a id="topics" class="topics-hide" href="http://localhost/topics-post.php?topic=<?php echo $topic; ?>"><?php echo $topic; ?></a>
+                <p class="topics-hide"></p>
                 <a id="comment" href="big.php?id=<?php echo $id; ?>">Comment</a>
             </div>
         </div class="random-post">
