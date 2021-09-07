@@ -19,11 +19,11 @@ if (!isset($_SESSION['loggedin'])) {
 <?php
 
 
-$title = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'title')))));
-$comment = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'comment')))));
-$upload_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'date')))));
-$display_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'displaydate')))));
-$topic = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'topic')))));
+$title =  filter_input(INPUT_POST, 'title');
+$comment = filter_input(INPUT_POST, 'comment');
+$upload_time = filter_input(INPUT_POST, 'date');
+$display_time = filter_input(INPUT_POST, 'displaydate');
+$topic =  filter_input(INPUT_POST, 'topic');
 
 if (!empty($title)){
 if (!empty($comment)){

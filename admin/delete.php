@@ -19,6 +19,7 @@ $del = mysqli_query($conn,"delete from posts where id = '$id'"); // delete query
 if($del)
 {
     echo "done!";
+    echo "<a href='home.php'>Home</a>";
     mysqli_close($conn); // Close connection
     exit;	
 }
