@@ -1,25 +1,4 @@
-<html>
-<head>
-  <?php include("config.php");?>
-  <title><?php include("assets/php/title-big.php") ?> | anypost</title>
-  <style>
-    #header {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-<noscript>
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>Please enable Javascript for full funcionality!</strong>
-</div>
-</noscript>
-<?php include("assets/php/nav.php");?>
-<main>
-<div style="margin-bottom: 100px;"></div>
-
-<?php
+<?php include("config.php");
 $id=$_GET['id'];
 // Checking data it is a number or not
 if(!is_numeric($id)){
@@ -51,7 +30,6 @@ if($stmt = $conn->prepare($count)){
  $comment = $row->comment;
  $date = $row->display_time;
  $topic = $row->topic;
- echo " " . "<div class='big-article'><h2>$row->title </h2><span>$row->display_time</span><br><br><p>$row->comment</p><div class='topics'   id='topics'><a href='topics-post.php?topic=$row->topic'><p class='topics-hide' >$row->topic</p></div></a></div>";
 
 
 
@@ -60,6 +38,41 @@ echo $connection->error;
 }
 }
 ?>
+<html>
+<head>
+<meta property="og:title" content="<?php echo $title?> | Anypost" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://anypost.pixel-fy.com" />
+<meta property="og:site_name" content="Anypost">
+<meta property="og:image:url" content="http://anypost.pixel-fy.com/image.php?text=<?php echo $title?>" />
+<meta property="og:description" content="<?php echo $comment?> | View more posts like this on Anypost" />
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="500">
+<meta property="og:image:height" content="500">
+<meta name="twitter:title" content="<?php echo $title?> | Anypost">
+<meta name="twitter:description" content="<?php echo $comment?> | View more posts like this on Anypost">
+<meta name="twitter:image" content="http://anypost.pixel-fy.com/image.php?text=<?php echo $title?>">
+<meta name="twitter:card" content="summary_large_image">
+  <title><?php include("assets/php/title-big.php") ?> | anypost</title>
+  <style>
+    #header {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<noscript>
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Please enable Javascript for full funcionality!</strong>
+</div>
+</noscript>
+<?php include("assets/php/nav.php");?>
+<main>
+<div style="margin-bottom: 100px;"></div>
+  <?php  echo " " . "<div class='big-article'><h2>$row->title </h2><span>$row->display_time</span><br><br><p>$row->comment</p><div class='topics'   id='topics'><a href='topics-post.php?topic=$row->topic'><p class='topics-hide' >$row->topic</p></a><a href='image.php?text=$row->title&comment=$row->comment'><p>Download</p></div></div>";
+?>
+
 
 <script>
    let attribute = document.getElementsByClassName('topics-hide');
