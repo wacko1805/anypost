@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Quicksand:wght@500&family=Roboto+Slab:wght@500&family=Rubik:wght@500&family=Source+Code+Pro&family=Ubuntu&display=swap');
+@import url('colour.php');
+@import url('font.php');
 
 .material-icons {
   font-family: 'Material Icons';
@@ -45,13 +48,11 @@
 html {
 }
 :root {
---main: #9088d4;
 --colour2: #383838;
 --colour3: #737373;
 --colour4: #cfcfcf;
 --colour5: #929292;
 --bg: white;
---font: 'Poppins', sans-serif;
 }
 
 body {
@@ -355,7 +356,7 @@ footer {
 }
 
 footer .back-to-top  {
-	background-color: #949CDF;
+	background-color: var(--main);
 	border-radius: 30px;
 	padding: 5px 15px;
 	color: white;
@@ -387,7 +388,7 @@ footer .social-links i {
 	transition: 0.3s;
 }
 footer .social-links i:hover {
-	color: #949CDF;
+	color: var(--main);
 }
 .icon  {
 font-size: 30px;
@@ -406,12 +407,12 @@ a {
 text-decoration: none;
 }
 article {
+  z-index: 0;
   border-radius: 3px;
   border: 5px solid var(--colour4);
   padding-left: 20px;
   padding-right: 20px;
   position:relative; 
-  z-index: 1;
   text-transform: capitalize;
   transition: 0.3s;
   
@@ -429,20 +430,19 @@ article {
   }
   article span i {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     padding-left: 10px;
     padding-right: 10px;
     font-style: normal;
   }
   article span i:before {
-    border-top: 5px solid white;
+    border-top: 6px solid white;
     mix-blend-mode: multiply;
     content:"";
-    margin: 0 auto; /* this centers the line to the full width specified */
-    position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+    margin: 0 auto; 
+    position: absolute;
     top: 7.5px; left: 0; right: 0; bottom: 0;
     width: 95%;
-    z-index: -1;
 }
   @media only screen and (max-width: 600px) {
   article span {
@@ -469,9 +469,7 @@ article {
     color: var(--main);
   }
 article:hover {
-  box-shadow: 0px 2px 2px -3px rgba(0, 0, 0, 0.2), 0px 2px 10px 1px rgba(0, 0, 0, 0.1), 0px 1px 20px 1px rgba(0, 0, 0, 0.1);
-
-}
+  box-shadow: 0px 42px 52px -67px rgba(0,0,0,0.75);}
 
 
 
@@ -878,6 +876,7 @@ color: var(--bg);
   float: right;
 }
 
+
 .header .menu-icon .navicon {
   background: #333;
   display: block;
@@ -913,7 +912,7 @@ color: var(--bg);
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 340px;
+  max-height: 500px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -936,6 +935,7 @@ color: var(--bg);
 /* 48em = 768px */
 
 @media (min-width: 1100px) {
+
   .header li {
     float: left;
   }
@@ -1112,6 +1112,7 @@ text-transform: capitalize;
     border-radius: 30px;
     color: var(--bg);
     margin-bottom: 10px;
+    margin-right: 5px;
     
     
   }
@@ -1327,24 +1328,25 @@ text-transform: capitalize;
   }
   
   .overlay {
+    z-index: 1;
     position: fixed;
     top: -1000px;
-    bottom: 0;
+    bottom: 1000px;
     left: 0;
     right: 0;
     opacity: 0;
     overflow: scroll;
     box-sizing: border-box;
-    z-index: 2;
     transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   }
   .overlay:target {
     transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-
     opacity: 1;
     top: 0;
+    bottom: 0;
   }
   .popup {
+
     margin: 70px auto;
     padding: 20px;
     background-color: var(--bg);
@@ -1395,3 +1397,100 @@ text-transform: capitalize;
         }
         }
     
+        #settings {
+          top: 50px;
+          display: none;
+          position: fixed;
+          z-index: 5;
+          width: 100%;
+          height: 100%;
+          overflow: scroll;
+          box-sizing: border-box;
+          transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+
+        }
+        .settings {
+          margin: 70px auto;
+          padding: 20px;
+          background-color: var(--bg);
+          border-radius: 5px;
+          width: 45%;
+          max-height: 100%;
+    overflow: auto;
+          position: relative;
+          box-shadow: 0px 2px 2px -3px rgba(0, 0, 0, 0.2), 0px 2px 10px 1px rgba(0, 0, 0, 0.1), 0px 1px 20px 1px rgba(0, 0, 0, 0.1);
+        }
+
+  
+          @media only screen and (max-width: 1200px) {
+            .settings {
+              width: 60%;
+              }
+              }
+          @media only screen and (max-width: 900px) {
+            .settings {
+              width: 80%;
+              }
+              }
+          @media only screen and (max-width: 800px) {
+            .settings {
+              width: 80%;
+              }
+              }
+          @media only screen and (max-width: 600px) {
+            .settings {
+              width: 100%;
+              }
+              }
+        .settings h1 {
+          color: var(--colour2);
+          text-align: center;
+          font-size: 50px;
+        }
+
+        input[type="color"] {
+height: 80px;
+width: 80px;
+border: none;
+transition: 0.2s;
+outline: none;
+background: none;
+      }
+.settings form label {
+  color: var(--colour3);
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.settings i {
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: var(--colour3);
+  cursor: pointer;
+  
+}
+      input[type=button] {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 5px solid var(--colour4);
+        background-color: var(--bg);;
+        color: var(--colour5);
+        border-radius: 5px;
+        bottom: 0;
+        transition: 0.1s;
+        cursor: pointer;
+        font-family: var(--font);
+        margin-bottom: 30px;
+        outline: none;
+        -webkit-appearance: none;
+        -webkit-border-radius: 5px;
+        }
+        input[type=button]:focus {
+        border: 5px solid var(--colour5);
+        background-color: var(--colour5);;
+        
+        }

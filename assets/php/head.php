@@ -8,3 +8,6 @@
   <meta name="author" content="Jack Sam">
   <script src="../assets/js/jquery-1.12.4.js"></script>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/cookie-colour.js"></script>
+  <script src="../assets/js/cookie-font.js"></script>
+
