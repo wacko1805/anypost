@@ -10,4 +10,4 @@
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/cookie-colour.js"></script>
   <script src="../assets/js/cookie-font.js"></script>
-
+  <script src='https://www.hCaptcha.com/1/api.js' async defer></script>

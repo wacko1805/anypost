@@ -3,6 +3,16 @@
 <head>
   <?php include("config.php");?>
   <title>Anypost</title>
+  <script>
+    $("form").submit(function(event) {
+
+var hcaptchaVal = $('[name=h-captcha-response]').value;
+if (hcaptchaVal === " ") {
+   event.preventDefault();
+   alert("Please complete the hCaptcha");
+}
+});
+</script>
 </head>
 <body>
 <?php include("assets/php/nav.php");?>
@@ -11,6 +21,7 @@
 	<div class="popup w3-animate-top">
 		<div class="content ">
         <form  action="connect.php"   id="form" accept-charset="utf-8"  method="post">
+        <div class="h-captcha" id="captcha"  data-sitekey="d3b475c7-c72b-4ccf-be51-b63988c0fb57">
     <input type="text" name="title" id="title"  placeholder="Title"  required autocomplete="off"> <br>
       <textarea  maxlength="500" rows="7"  type="text" id="comment" name="comment"  placeholder="Comment" required autocomplete="off" ></textarea> <br>
       <input style="display:none;" type="text" name="date" value="<?= $date ?>">
@@ -19,9 +30,13 @@
       <option id="no topic">No Topic</option>
       <?php include("select-posts.php");?>
   </select>
-      <div  class="submitp"><p><input type="submit" id='submit'   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="/t+c.php">Terms and conditions</a></i></p></div>
+      <div  class="submitp"><p style="margin-bottom:0;"><input type="submit" id='submit' onClick="return empty()"   name="submit" value="Submit"><i>By submitting,<br> you agree to the <br><a href="/t+c.php">Terms and conditions</a></i></p></div>
     </div>
+</div>
+</div>
 </form>
+
+
 <script src="/assets/js/disable.js"></script>
 <script>
   $(document).ready(function() {
