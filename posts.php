@@ -34,9 +34,14 @@ while($row = $result->fetch_assoc()) {
     } else {
         $comments_ave = "";
     }
-    echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $row["title"]. "</h2><p> " . $row["comment"]. "</p><div class='topics'   id='topics'><a href='topics-post.php?topic=" . $row["topic"]. "'><p class='topics-hide' >" . $row["topic"]. "</p></div></a><a  href='big.php?id=" . $row["id"]. "'><br><div class='more'><i class='fas fa-reply'></i> ";
+    $title = $row["title"];
+    $comment = $row["comment"];
+    $url_pattern = '/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/';   
+    $title= preg_replace($url_pattern, '<a  href="?link=$0">$0</a>', $title);
+    $comment= preg_replace($url_pattern, '<a href="?link=$0">$0</a>', $comment);
+    echo " " . "<a  href='big.php?id=" . $row["id"]. "'><article><h2> " . $title. "</h2><p> " . $comment. "</p><div class='topics'   id='topics'><a href='topics-post.php?topic=" . $row["topic"]. "'><p class='topics-hide' >" . $row["topic"]. "</p></div></a><a  href='big.php?id=" . $row["id"]. "'><br><div class='more'><i class='fas fa-reply'></i> ";
     echo $comments_ave;
-    echo "</i></a></div><span>" . $row["display_time"]. " </span></artilce></article></div><br>";
+    echo "</i></a></div><span><i>" . $row["display_time"]. " </i></span></artilce></article></div><br>";
 }
 
 } else {

@@ -2,7 +2,7 @@
 <html>
 <head>
   <?php include("config.php");?>
-  <title>Anypost</title>
+  <title>anypost</title>
   <script>
     $("form").submit(function(event) {
 
@@ -15,8 +15,10 @@ if (hcaptchaVal === " ") {
 </script>
 </head>
 <body>
+    
 <?php include("assets/php/nav.php");?>
 <main>
+    
 <div id="create" class="overlay">
 	<div class="popup w3-animate-top">
 		<div class="content ">
@@ -41,7 +43,7 @@ if (hcaptchaVal === " ") {
 <script>
   $(document).ready(function() {
     $("body").prepend('<div id="overlay" class="ui-widget-overlay" style="z-index: 1001; display: none;"></div>');
-    $("body").prepend("<div id='PleaseWait' class='loading' style='display: none;'><div class='box'><ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul></div> <h1 class='loading2'>Loading...</h1></div>");
+    $("body").prepend("<div id='PleaseWait' class='loading' style='display: none;'><div class='box'><ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul></div> <h1 class='loading2'>Loading...</h1></div></div>");
 });
 
 $('#form').submit(function() {
@@ -62,10 +64,20 @@ $('#form').submit(function() {
 </div>
 
 
-
 <?php include("posts.php");
 ?>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9222991553459658"
+     crossorigin="anonymous"></script>
+<!-- Anypost display -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9222991553459658"
+     data-ad-slot="3075986874"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <br>
 
 <br>

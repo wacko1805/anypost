@@ -11,5 +11,7 @@
   <script src="../assets/js/cookie-colour.js"></script>
   <script src="../assets/js/cookie-font.js"></script>
   <script src='https://www.hCaptcha.com/1/api.js' async defer></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9222991553459658"
-     crossorigin="anonymous"></script>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9222991553459658" crossorigin="anonymous"></script>
+ 
+ 
+  

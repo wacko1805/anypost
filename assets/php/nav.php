@@ -1,15 +1,14 @@
 <div id="top"></div>
 <div id="header"><?php echo $maintitle ?><span id="span">.</span></div>
       <header class="header">
-        <a href="../" class="logo">AnyPost</a>
+        <a href="../" class="logo">anypost</a>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
           <li><a href=".">Home</a></li>
           <li><a href="/topics.php">Topics</a></li>
-          <li><a href="/random.php">Random Post</a></li>
-          <li><a href="https://github.com/wacko1805/anypost">source code</a></li>
-                    <li><a onclick="settings()"><i class="fas fa-cog"></i></a></li>
+          <li><a href="https://github.com/wacko1805/anypost">Source Code</a></li>
+          <li class="settingsicon"><a onclick="settings()" ><i class="fas fa-cog"></i></a></li>
 
         </ul>
       </header>
@@ -63,3 +62,16 @@ function settings() {
 </div>
 </div>
 </div>
+<?php
+if(isset($_GET['link'])) {
+    $link = $_GET['link'];
+
+    echo "<div class='center'><div id='leaving' class='leaving'>
+    <h1>Warning:</h1>
+    <br>
+    <p>You are leaving Anypost. The link you are proceeding too may not be secure. Please proceed with caution </p>
+    <p><b>Link: </b> $link</p>
+    <a href='$link'><button>Proceed to link</button></a> <a onClick='javascript:history.go(-1)'><button>Go back</button></a>
+    </div></div>";
+}
+?>

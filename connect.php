@@ -9,6 +9,9 @@
 <main>
 
 <?php
+$badword = "<article><h2>Some words in your post are not allowed to be posted on anypost.</h2><p>Please remove these words and try again.</p></article>";
+$badwordlist = file_get_contents("bads.txt");
+$badwordstring = "/" . $badwordlist . "/i";
 $data = array(
     'secret' => "0x6C0d0FAbF8C111b09AfB0f21942C107B198a6B8b",
     'response' => $_POST['h-captcha-response']
@@ -20,7 +23,6 @@ curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($verify);
 $responseData = json_decode($response);
 if($responseData->success) {
-    header('Location: .');
 
 
 $title = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'title')))));
@@ -28,6 +30,36 @@ $comment = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt'
 $upload_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'date')))));
 $display_time = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'displaydate')))));
 $topic = str_replace("'", '’', str_replace('\n', ' ', str_replace('>', '&gt', str_replace('<', '&lt', filter_input(INPUT_POST, 'topic')))));
+
+if (preg_match($badwordstring, $title)){
+   echo $badword;
+   return false;
+}
+   else {
+
+    if (preg_match($badwordstring, $comment)){
+        echo $badword;
+        return false;
+     }
+        else {
+
+            if (preg_match($badwordstring, $upload_time)){
+                echo $badword;
+                return false;
+             }
+                else {
+
+                    if (preg_match($badwordstring, $display_time)){
+                        echo $badword;
+                        return false;
+                     }
+                        else {
+
+                            if (preg_match($badwordstring, $topic)){
+                                echo $badword;
+                                return false;
+                             }
+                                else {
 
 if (!empty($title)){
 if (!empty($comment)){
@@ -44,46 +76,55 @@ else{
 $sql = "INSERT INTO posts (title, comment, upload_time, display_time, topic)
 values ('$title','$comment','$upload_time','$display_time','$topic')";
 if ($conn->query($sql)){
-echo "<article><h2><div class='loader'></div><br>
-Your post is uploading</h2></article>";
+    $sqll = "SELECT * FROM `posts` ORDER BY `posts`.`id` DESC LIMIT 1 ";
+$resultl = $conn->query($sqll);
+if ($resultl->num_rows > 0) {
+while($rowl = $resultl->fetch_assoc()) {
+
+    $latest = $rowl["id"];
+}
+} else {
+}
+    $note = "<script>window.location.replace('/big.php?id=".$latest."');</script>";
 }
 else{
-echo "Error: ". $sql ."
+    $note = "Error: ". $sql ."
 ". $conn->error;
 }
 $conn->close();
 }
-}
+}}
 else{
-echo "<article><h2>Sorry, there was an issue on our end. </h2></article>";
+$note = "Sorry, there was an issue on our end.";
 die();
 }
 }
 else{
-    echo "<article><h2>Sorry, there was an issue on our end. </h2></article>";
+    $note = "Sorry, there was an issue on our end. ";
     die();
     }
     }
 
         
 else{
-echo "<article><h2>Sorry, there was an issue on our end. </h2></article>";
+    $note = "Sorry, there was an issue on our end. ";
 die();
 }
 }
 
 else{
-    echo "<article><h2>Sorry, there was an issue on our end. </h2></article>";
+    $note = "Sorry, there was an issue on our end. ";
     die();
     }
     }
-
+                        }}}}
 } 
 else {
-echo "<article><h2>Please verify that you are a human and try again<h2></article>";
+    $note = "Please verify that you are a human and try again";
 }
-?>
 
+?>
+<article><h2><?php echo $note; ?><h2></article>
 </body>
 </html>
 </html>

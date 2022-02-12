@@ -1,6 +1,5 @@
 <?php
-
-$host = "127.0.0.1";
+$host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
 $dbname = "anypost";
@@ -10,7 +9,7 @@ date_default_timezone_set('Etc/GMT+0');
 $displaydate = date('H:i A, M d ') ;
 $timezone = "GMT+";
 include("assets/php/head.php");
-$conn=mysqli_connect($host,$dbusername,$dbpassword,"anypost");
+$conn=mysqli_connect($host,$dbusername,$dbpassword,$dbname);
 if(!$conn){
  die('Could not Connect My Sql:' .mysql_error());
 }

@@ -8,6 +8,7 @@ var today = new Date();
 function putCookieFont(form)
   {
    setCookieFont("font", form[1].usrname.value);
+   console.log("restting fonts"); 
 location.reload();
     return true;
   }
